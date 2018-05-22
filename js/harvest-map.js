@@ -272,15 +272,15 @@ hideall();
 			
 		}
 		else{
-		myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S. in waterfowl harvest.</td></tr><tr><td class='indented'>"+duckrank+" in Duck harvest.</td></tr><tr><td class='indented'>"+gooserank+" in Goose harvest.</td></tr>";	
+		myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S. in waterfowl harvest</td></tr><tr><td class='indented'>"+duckrank+" in duck harvest</td></tr><tr><td class='indented'>"+gooserank+" in goose harvest</td></tr>";	
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
-		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+"</td></tr>";
+		myTable2+="<tr><td>The top harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+"</td></tr>";
 		if(stateid==" Alaska"){
-				myTable2+="<tr><td><p></p><strong><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Alaskan harvest data are not <br>available at the borough-level.</span></p></strong></td></tr>";
+				myTable2+="<tr><td><br><strong><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Alaskan harvest data are not <br>available at the borough-level.</span></p></strong></td></tr>";
 			}
 			else{
-			myTable2+="<tr><td><p></p><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"
+			myTable2+="<tr><td><br><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"
 			}
 		}
 	   
