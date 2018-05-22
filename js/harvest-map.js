@@ -245,11 +245,15 @@ hideall();
 	  //$('#info-box').html($(this).data('info2'));
 	 
 	  var statespecies = $(this).data('info4');
+	  var duckrank = $(this).data('info6');
+	  var gooserank = $(this).data('info7');
 	  var staterank = $(this).data('info3').substring(0,2);
 	   var stateid = $(this).data('info3').replace(staterank,'');
 	  staterank = parseInt(staterank);
 	  
 	staterank = suffix(staterank);
+	duckrank = suffix(duckrank);
+	gooserank = suffix(gooserank);
 	//staterank = staterank.toString();
 	//console.log(staterank);
 	  if($(this).data('info3')!="Hawaii"){
@@ -268,7 +272,7 @@ hideall();
 			
 		}
 		else{
-		myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S. in waterfowl harvest.</td></tr>";	
+		myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S. in waterfowl harvest.</td></tr><tr><td class='indented'>"+duckrank+" in Duck harvest.</td></tr><tr><td class='indented'>"+gooserank+" in Goose harvest.</td></tr>";	
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
 		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+"</td></tr>";
