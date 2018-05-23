@@ -906,11 +906,11 @@ LA.addEventListener('click', function(ev){
 		}
 		}
 	}
-	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked parishes within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;</td></tr>";
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country (out of 3111)</td></tr><tr><td style='heigh:15px;'>&nbsp;</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted parish rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted parish rank within the country (out of 3111)</td></tr><tr><td style='heigh:15px;'>&nbsp;</td></tr>";
 		}
 		else{
 		myTable+="<td style='height:15px;'> " +myArray2[i]+ "</td></tr>";
@@ -938,18 +938,18 @@ LA.addEventListener('click', function(ev){
 		  }
 	  }
 	   if (nationrank=="2,927th"){
-			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+			  $('#info-box').html(stringcounty +" parish: <strong>No harvest reported in survey</strong>");
 		  }
 		  else{
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" Parish ranks <strong>"+var3+"</strong> out of "+pathlength+" parishes in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 parishes in the U.S.");
 		  }
 	  
 	  
-		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked parishes within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country (out of 3111)</td></tr><tr><td style='heigh:15px;'>&nbsp;" +var4+" - "+var1+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted parish rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted parish rank within the country (out of 3111)</td></tr><tr><td style='heigh:15px;'>&nbsp;" +var4+" - "+var1+ "</td></tr>";
 		}
 		else{
 		myTable+="<td style='height:15px;'> " +myArray2[i]+ "</td></tr>";
