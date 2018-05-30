@@ -76,6 +76,7 @@ div#data-panel {
   font-size: 15pt;
   color: #002868;
   font-family: "Arial Narrow", Arial, sans-serif;
+  white-space: nowrap;
 }
 
 /* barchart css*/

@@ -80,20 +80,20 @@ function drawMap() {
             if(d.id === 15){
               // Change message for Hawaii
               var textblock = document.createElement('div');
-              textblock.innerHTML = "Waterfowl are not hunted in Hawaii.";
+              textblock.innerHTML = "Waterfowl are not hunted in <strong>Hawaii</strong>.";
             }
             else {
               data = stateInfo.get(d.id);            
               var textblock = document.createElement('div');
 
-              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' has...</div>\n';
-              textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck and<br>' + Number(data.goose_hunters).toLocaleString() + ' goose hunters.</div>\n';
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> has...\n';
+              textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck<br>' + Number(data.goose_hunters).toLocaleString() + ' goose hunters</div>\n';
 
               textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter spends</div>\n';
-              textblock.innerHTML += '<div id="tx-indent">'+ Number(data.duck_days) + ' days afield hunting ducks,<br>' + Number(data.goose_days) + ' days afield hunting geese.</span></div>\n';
+              textblock.innerHTML += '<div id="tx-indent">'+ Number(data.duck_days) + ' days afield hunting ducks<br>' + Number(data.goose_days) + ' days afield hunting geese</span></div>\n';
 
               textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal; font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">A hunter harvests an average of</div>\n';
-              textblock.innerHTML +=  '<div id="tx-indent">' + Number(data.duck_bag) + ' ducks<br>' + Number(data.goose_bag) + ' geese.</div>';
+              textblock.innerHTML +=  '<div id="tx-indent">' + Number(data.duck_bag) + ' ducks<br>' + Number(data.goose_bag) + ' geese</div>';
             }
               var panel = document.getElementById('data-panel');
               if (panel.hasChildNodes()){
