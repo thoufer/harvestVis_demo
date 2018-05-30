@@ -81,7 +81,7 @@
 					<a href="#!" id="tooltip" data-toggle="tooltip" title="Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have &#39;colored up&#39; into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.">
 						<span class="toolText">Why?</span>
 					
-					<!--<span class="tooltipCustom" tooltip-follow-cursor>Why?<span class="tooltipCustomContent">Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have "colored up" into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.</span></span> <img class="toolImg" src="img/info.fw.png" onclick="myFunction()" alt="" height="16" width="15" style="vertical-align: middle" />--><i class="fa fa-info-circle" style="color:#002868;"></i></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. 
+					<i class="fa fa-info-circle" style="color:#002868;"></i></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. 
 						
 					Here is a short video that shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings. Also, see further down on this page for a second video about species identification using wings.
 					<div class="overflow-hidden" style="padding-bottom: 5px; padding-right: 5px;">	
@@ -90,13 +90,8 @@
 					
 						<span style="padding-top: 50px; padding-bottom: 5px; display: block; text-align: right; line-height: 1.2; font-size: 9pt;">Below is a duck wing showing the different feather groupings that are key to identifying duck species (click for a larger version)!</span>
 							
-						<img id="myImg" class="img-style" style="float: right; overflow: hidden;" width="20%" src="img/FeatherGroups.jpg" alt="Duck wing feather groupings" title="Duck wing feather groupings" />
-						<!-- The Modal (popup image larger)-->
-							<div id="myModal" class="modal">
-							  <span class="close">&times;</span>
-							  <img class="modal-content" id="img01">
-							  <!----><div id="caption"></div>
-							</div>
+						<img class="myImg img-style" style="float: right; overflow: hidden;" width="20%" src="img/FeatherGroups.jpg" alt="duck wing feather groupings" title="duck wing feather groupings" />
+						
 					</p>
 					</div><br>
 
@@ -114,12 +109,13 @@
 					We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with Parts Collection Surveys.</p>
                     
 					<div class="overflow-hidden">
-                      <p class="img-right" style="padding-right: 5px;"><img class="img-style" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" /></p>
+                      <p class="img-right" style="padding-right: 5px;"><img class="myImg img-style" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" /></p>
                       <p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar.</p>
 						
                       <p>What is the duck on the right?</p>
                       
-                      <p class="img-left"><img class="img-style" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" /></p>
+                      <p class="img-left"><img class="myImg img-style" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" />
+						</p>
                       <br />
                       <p><br />What about the one on the left? Do you have to worry about the next bird you shoot if you have already bagged one of these? Below is another video showing you how to identify several "brown ducks" of different species by their wings.</p></div>
 									  
@@ -129,16 +125,20 @@
 					
 						<span style="padding-top: 50px; padding-bottom: 5px; display: block; text-align: right; line-height: 1.2; font-size: 9pt;">Below is a duck wing showing the different feather groupings that are key to identifying duck species (click for a larger version)!</span>
 						
-						<img id="myImg2" class="img-style" style="float: right; overflow: hidden;" width="20%" src="img/FeatherGroups.jpg" alt="Duck wing feather groupings" title="Duck wing feather groupings" />
-						<!-- The Modal (popup image larger)-->
-							<div id="myModal2" class="modal2">
-							  <span class="close2">&times;</span>
-							  <img class="modal-content2" id="img02">
-							  <!----><div id="caption2"></div>
-							</div>
+						<img class="myImg img-style" style="float: right; overflow: hidden;" width="20%" src="img/FeatherGroups.jpg" alt="duck wing feather groupings" title="duck wing feather groupings" />
+						
 					</p>
 					</div><br>
 				
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+					<!-- The Close Button -->
+					<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+					<!-- Modal Content (The Image) -->
+					<img class="modal-content" id="img01">
+					<!-- Modal Caption (Image Text) -->
+					<div id="caption"></div>
+					</div>
 						
 					<p><a href="index.html" style="font-weight: bold;">Click here to see maps showing waterfowl harvest in through the U.S.</a></p>
           			<!-- TemplateEndEditable -->
@@ -148,7 +148,7 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 10, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 30, 2018<!-- #EndDate --></p>
 	</div></div>
 
 </div><!--ends div for mobile nav-->

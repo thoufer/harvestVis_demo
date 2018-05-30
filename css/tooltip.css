@@ -1,34 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
-/*Tooltip follows cursor pointer*/
-
-/*.tooltipCustom span.tooltipCustomContent{
-    display: none;
-}
-
-.test:hover {
-    cursor:pointer;
-}
-*/
-/*.tooltipCustom:hover span.tooltipCustomContent {
-    display:block;
-    font-weight: normal;
-	font-size: 80%;
-	font-style: normal;
-    text-align: center;
-    position:absolute;
-    overflow:hidden;
-    width: 300px;
-    background-color: white;
-    padding: 5px;
-    border-radius:5px;
-	border: 1px solid gray;
-    color: black;
-	line-height: 120%;
-    
-}
-*/
 a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
 	text-decoration: none !important;
 }
@@ -67,17 +38,17 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
 	box-shadow: 3px 3px 3px 0px #444444;
 }
 
-/* The Modal image */
-#myImg, #myImg2 {
+ /* Style the Image Used to Trigger the Modal */
+.myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#myImg:hover, #myImg2:hover {opacity: 0.7;}
+.myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
-.modal, .modal2 {
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -91,29 +62,28 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-/* Modal Content (image) */
-.modal-content, .modal-content2 {
+/* Modal Content (Image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
 }
 
-/* Caption of Modal Image */
-#caption, #caption2 {
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 650px;
     text-align: center;
     color: #ccc;
     padding: 10px 0;
     height: 150px;
 }
 
-
-/* Add Animation */
-.modal-content, .modal-content2, #caption, #caption2 {    
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -121,17 +91,17 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
+    from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
 /* The Close Button */
-.close, .close2 {
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -141,16 +111,16 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
     transition: 0.3s;
 }
 
-.close:hover, .close2:hover,
-.close:focus, .close2:focus {
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content, .modal-content2 {
+@media only screen and (max-width: 650px){
+    .modal-content {
         width: 100%;
     }
 }
