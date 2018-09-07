@@ -102,7 +102,7 @@ function drawMap() {
               textblock.innerHTML += '<div id="tx-indent">'+ ordinal_suffix_of(data.rank_duck) + ' in duck harvest<br>'+
                                       ordinal_suffix_of(data.rank_geese)+ ' in goose harvest</div>'
 
-              textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">The top harvested duck species are</div>\n';
+              textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">Top harvested ducks</div>\n';
               textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
             }
               var panel = document.getElementById('data-panel');
