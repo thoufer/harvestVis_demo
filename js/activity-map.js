@@ -93,12 +93,12 @@ function drawMap() {
               textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck hunters<br>' +
                                                               Number(data.goose_hunters).toLocaleString() + ' goose hunters</div>\n';
 
-              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter</div>\n';
+              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter harvests</div>\n';
               textblock.innerHTML += '<div id="tx-indent">'+
                                             Number(data.duck_bag) + ' ducks in ' + Number(data.duck_days) + ' days afield<br>' +
-                                            Number(data.goose_bag) + ' geese in' + Number(data.goose_days) + ' days afield </div>\n';
+                                            Number(data.goose_bag) + ' geese in ' + Number(data.goose_days) + ' days afield </div>\n';
 
-              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' ranks </div>\n';
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> ranks\n';
               textblock.innerHTML += '<div id="tx-indent">'+ ordinal_suffix_of(data.rank_duck) + ' in duck harvest<br>'+
                                       ordinal_suffix_of(data.rank_geese)+ ' in goose harvest</div>'
 
