@@ -99,8 +99,8 @@ function drawMap() {
                                             Number(data.goose_bag) + ' geese in' + Number(data.goose_days) + ' days afield </div>\n';
 
               textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' ranks </div>\n';
-              textblock.innerHTML += '<div id="tx-indent">'+ data.rank_duck + ' in duck harvest<br>'+
-                                      data.rank_geese + ' in goose harvest</div>'
+              textblock.innerHTML += '<div id="tx-indent">'+ ordinal_suffix_of(data.rank_duck) + ' in duck harvest<br>'+
+                                      ordinal_suffix_of(data.rank_geese)+ ' in goose harvest</div>'
 
               textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">The top harvested duck species are</div>\n';
               textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
@@ -136,13 +136,26 @@ function drawMap() {
          .attr("stroke-width", "3px");
    };
 
-
-
-   function resize() {
+function resize() {
      width = $('#map-container').width(), height = $('#map-container').height();
      svg.attr("width", width).attr("height", height)
      svg.size([width, height]);
      console.log(width, height)
    };
+}
+
+function ordinal_suffix_of(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "<sup>st</sup>";
+    }
+    if (j == 2 && k != 12) {
+        return i + "<sup>nd</sup>";
+    }
+    if (j == 3 && k != 13) {
+        return i + "<sup>rd</sup>";
+    }
+    return i + "<sup>th</sup>";
 }
 drawMap();
