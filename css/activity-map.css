@@ -56,6 +56,11 @@ div#tx-indent {
   margin-left: 16px;
   margin-bottom: 15px;
   font-size: 14pt;
+  position: relative;
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap
 }
 
 div#map-text {
@@ -77,6 +82,7 @@ div#data-panel {
   color: #002868;
   font-family: "Arial Narrow", Arial, sans-serif;
   white-space: nowrap;
+  width: min-content;
 }
 
 /* barchart css*/
