@@ -62,7 +62,9 @@ function drawMap() {
                                                                     'goose_bag':d.goose_bag,
                                                                     'goose_hunters': d.goose_hunters,
                                                                     'goose_days': d.goose_daysAfield,
-                                                                    'species': d.species});
+                                                                    'species': d.species,
+                                                                    'rank_duck': d.rankDuck,
+                                                                    'rank_geese': d.rankGeese});
                                               })
      .await(ready);
 
@@ -91,13 +93,17 @@ function drawMap() {
               textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck hunters<br>' +
                                                               Number(data.goose_hunters).toLocaleString() + ' goose hunters</div>\n';
 
-              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">A hunter averages</div>\n';
+              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter</div>\n';
               textblock.innerHTML += '<div id="tx-indent">'+
-                                            Number(data.duck_bag) + ' ducks and ' + Number(data.duck_days) + ' days afield and ' +
-                                            Number(data.goose_bag) + ' geese ' + Number(data.goose_days) + ' days afield </div>\n';
+                                            Number(data.duck_bag) + ' ducks in ' + Number(data.duck_days) + ' days afield<br>' +
+                                            Number(data.goose_bag) + ' geese in' + Number(data.goose_days) + ' days afield </div>\n';
+
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' ranks </div>\n';
+              textblock.innerHTML += '<div id="tx-indent">'+ data.rank_duck + ' in duck harvest<br>'+
+                                      data.rank_geese + ' in goose harvest</div>'
 
               textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">The top harvested duck species are</div>\n';
-              textblock.innerHTML +=  '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
+              textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
             }
               var panel = document.getElementById('data-panel');
               if (panel.hasChildNodes()){
