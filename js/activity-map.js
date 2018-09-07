@@ -89,7 +89,7 @@ function drawMap() {
               data = stateInfo.get(d.id);
               var textblock = document.createElement('div');
 
-              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> has...\n';
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> has\n';
               textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck hunters<br>' +
                                                               Number(data.goose_hunters).toLocaleString() + ' goose hunters</div>\n';
 
