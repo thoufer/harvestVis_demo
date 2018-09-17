@@ -1,52 +1,52 @@
-id,name,abbrev,state,days,activeHunters,bagPerHunter
-1,Alabama,AL,AK,20991.93,4393.878,10.562
-2,Alaska,AK,AL,75338.41,13325.902,10.61
-4,Arizona,AZ,AR,403930.414,52704.414,21.086
-5,Arkansas,AR,AZ,17137.702,3297.702,11.82
-6,California,CA,CA,402303.748,47184.87,25.334
-8,Colorado,CO,CO,66102.418,11456.86,9.028
-9,Connecticut,CT,CT,10575.308,1666.684,7.148
-10,Delaware,DE,DE,25642.14,3636.764,10.058
-11,District of Columbia,DC,,,,
-12,Florida,FL,FL,82591.294,14567.732,13.868
-13,Georgia,GA,GA,94556.428,17504.332,7.914
-15,Hawaii,HI,,,,
-19,Iowa,IA,IA,104024.79,13760.75,11.558
-16,Idaho,ID,ID,104814.896,16375.362,15.772
-17,Illinois,IL,IL,237486.272,27152.954,13.056
-18,Indiana,IN,IN,72593.034,9724.11,9.73
-20,Kansas,KS,KS,96711.202,16170.506,13.458
-21,Kentucky,KY,KY,61517.788,8108.7,12.946
-22,Louisiana,LA,LA,568321.632,71050.378,23.346
-23,Maine,ME,MA,17926.02,3189.202,5.256
-24,Maryland,MD,MD,73622.298,15461.472,6.212
-25,Massachusetts,MA,ME,22242.002,4226.78,5.46
-26,Michigan,MI,MI,221530.262,35274.88,9.29
-27,Minnesota,MN,MN,373394.116,62592.68,9.704
-29,Missouri,MO,MO,213433.702,30997.784,14.562
-28,Mississippi,MS,MS,97208.952,14566.656,18.822
-30,Montana,MT,MT,73696.014,14184.534,10.924
-31,Nebraska,NE,NE,89048.42,12606.618,12.766
-32,Nevada,NV,NV,16383.488,3060.796,11.634
-33,New Hampshire,NH,NH,14899.118,2321.396,5.19
-34,New Jersey,NJ,NJ,39980.886,6358.508,8.854
-35,New Mexico,NM,NM,15981.176,3413.894,10.458
-36,New York,NY,NY,111325.566,19268.774,8.8
-37,North Carolina,NC,NC,202264.252,32531.034,11.22
-38,North Dakota,ND,ND,167503.254,33774.12,14.316
-39,Ohio,OH,OH,121377.946,15861.718,8.372
-40,Oklahoma,OK,OK,118196.626,17118.508,18.418
-41,Oregon,OR,OR,121403.756,16980.584,18.344
-42,Pennsylvania,PA,PA,87632.536,19631.304,4.03
-44,Rhode Island,RI,RI,4388.612,605.66,8.752
-45,South Carolina,SC,SC,112333.234,18258.18,9.598
-46,South Dakota,SD,SD,72792.552,13673.302,13.166
-47,Tennessee,TN,TN,92938.498,11386.168,19.77
-48,Texas,TX,TX,407137.932,69702.55,16.64
-49,Utah,UT,UT,97192.334,15799.37,13.154
-50,Vermont,VT,VT,16237.568,2927.948,7.124
-51,Virginia,VA,VA,83522.08,15397.462,8.28
-53,Washington,WA,WA,153562.278,21398.816,19.052
-54,West Virginia,WV,WV,4680.852,793.914,7.43
-55,Wisconsin,WI,WI,345731.72,53451.336,7.616
-56,Wyoming,WY,WY,18951.836,3579.558,10.5
+id,name,abbrev,duck_bag,duck_hunters,duck_daysAfield,goose_bag,goose_hunters,goose_daysAfield,species,percentHarvest,rankDuck,rankGeese
+1,Alabama,AL,12,13900,6,4,5100,5,Wood Duck;Gadwall;Mallard,28;24;13,25,37
+2,Alaska,AK,11,4900,5,4,2000,5,Mallard;Wigeon;Pintail,34;16;11,36,42
+4,Arizona,AZ,11,3200,5,2,1400,5,Mallard;Green-Winged Teal;Shoveler,23;18;11,41,48
+5,Arkansas,AR,22,54100,8,7,19200,5,Mallard;Gadwall;Green-Winged Teal,48;17;14,3,8
+6,California,CA,27,50600,9,5,34700,7,Green-Winged Teal;Mallard;Shoveler,26;15;15,2,3
+8,Colorado,CO,9,11700,6,7,13800,6,Mallard;Gadwall;Green-Winged Teal,52;10;10,33,15
+9,Connecticut,CT,7,1800,6,6,1700,6,Mallard;Long-Tailed Duck;Wood Duck,37;16;11,46,39
+10,Delaware,DE,11,3800,7,7,3600,6,Mallard;Green-Winged Teal;Black Duck,30;19;13,38,32
+11,District of Columbia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+12,Florida,FL,14,14200,6,2,1000,4,Ring-Necked Duck;Blue-WingedTeal;Wood Duck,32;31;6,21,49
+13,Georgia,GA,9,18300,6,4,10400,5,Wood Duck;Ring-Necked Duck;Mallard,57;9;9,27,28
+15,Hawaii,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+16,Idaho,ID,14,16600,6,5,12900,6,Mallard;Wigeon;Green-Winged Teal,65;9;6,16,21
+17,Illinois,IL,13,29500,9,5,23500,8,Mallard;Wood Duck;Gadwall,50;9;8,11,9
+18,Indiana,IN,9,10800,7,5,10600,7,Mallard;Wood Duck;Gadwall,53;13;7,34,24
+19,Iowa,IA,11,16000,7,5,12800,7,Mallard;Blue-WingedTeal;Wood Duck,32;19;18,24,23
+20,Kansas,KS,13,15600,6,9,13200,6,Mallard;Blue-WingedTeal;Gadwall,44;14;13,19,11
+21,Kentucky,KY,14,9200,8,3,8200,7,Mallard;Gadwall;Wood Duck,52;12;10,29,30
+22,Louisiana,LA,25,73800,8,6,11900,5,Gadwall;Blue-WingedTeal;Green-Winged Teal,22;21;20,1,17
+23,Maine,ME,6,4500,5,3,2800,5,Mallard;Wood Duck;Common Eider,27;16;13,42,41
+24,Maryland,MD,7,16300,5,7,24400,5,Mallard;Bufflehead;Wood Duck,30;11;8,31,4
+25,Massachusetts,MA,6,3300,6,4,2700,6,Mallard;Common Eider;Wood Duck,26;18;12,44,38
+26,Michigan,MI,9,35800,6,5,33600,6,Mallard;Wood Duck;Bufflehead,41;15;8,13,6
+27,Minnesota,MN,9,65700,6,4,49000,6,Mallard;Wood Duck;Blue-WingedTeal,27;20;13,5,2
+28,Mississippi,MS,21,14100,7,5,5300,5,Mallard;Gadwall;Wood Duck,29;20;14,14,36
+29,Missouri,MO,15,31800,7,5,13300,6,Mallard;Gadwall;Green-Winged Teal,51;13;12,6,18
+30,Montana,MT,10,12900,5,5,10500,5,Mallard;Wigeon;Green-Winged Teal,68;6;5,30,25
+31,Nebraska,NE,13,12900,7,8,13000,8,Mallard;Blue-WingedTeal;Green-Winged Teal,49;16;14,26,13
+32,Nevada,NV,13,3100,6,3,2100,5,Mallard;Gadwall;Green-Winged Teal,32;15;15,39,45
+33,New Hampshire,NH,5,2700,6,3,2100,6,Wood Duck;Mallard;Black Duck,33;32;10,47,44
+34,New Jersey,NJ,9,6100,6,8,4400,5,Mallard;Bufflehead;Black Duck,22;18;17,37,29
+35,New Mexico,NM,12,3000,6,3,1900,4,Mallard;Wigeon;Gadwall,44;15;10,43,43
+36,New York,NY,9,19100,6,8,16800,6,Mallard;Wood Duck;Black Duck,42;10;9,22,7
+37,North Carolina,NC,11,27900,6,3,15800,4,Wood Duck;Mallard;Green-Winged Teal,30;12;10,12,26
+38,North Dakota,ND,14,31200,5,7,24500,5,Mallard;Gadwall;Blue-WingedTeal,39;15;9,7,5
+39,Ohio,OH,8,15500,7,5,17700,7,Mallard;Wood Duck;Green-Winged Teal,51;13;6,32,16
+40,Oklahoma,OK,18,15500,7,6,7900,5,Mallard;Gadwall;Green-Winged Teal,40;22;11,15,27
+41,Oregon,OR,20,19400,8,6,10400,6,Mallard;Wigeon;Green-Winged Teal,39;17;14,10,22
+42,Pennsylvania,PA,5,20900,5,5,25700,5,Mallard;Wood Duck;Black Duck,44;26;5,35,10
+44,Rhode Island,RI,8,700,7,7,600,7,Mallard;Black Duck;Common Eider,20;14;11,48,47
+45,South Carolina,SC,10,19600,6,4,6900,4,Wood Duck;Mallard;Green-Winged Teal,45;11;9,20,35
+46,South Dakota,SD,13,14400,5,8,13500,5,Mallard;Gadwall;Blue-WingedTeal,43;12;10,23,12
+47,Tennessee,TN,18,13300,8,3,7900,7,Mallard;Gadwall;Wood Duck,44;17;12,17,31
+48,Texas,TX,16,71600,6,5,40700,3,Gadwall;Blue-WingedTeal;Green-Winged Teal,19;19;16,4,1
+49,Utah,UT,14,15700,7,3,9400,6,Mallard;Green-Winged Teal;Gadwall,30;16;14,18,34
+50,Vermont,VT,8,2800,6,5,2200,5,Mallard;Wood Duck;Green-Winged Teal,42;20;11,45,40
+51,Virginia,VA,8,16300,5,4,14100,5,Mallard;Wood Duck;Bufflehead,29;13;12,28,20
+53,Washington,WA,19,20900,7,5,12000,5,Mallard;Wigeon;Green-Winged Teal,48;18;10,9,19
+54,West Virginia,WV,7,900,6,6,900,6,Mallard;Wood Duck;Black Duck,54;23;7,49,46
+55,Wisconsin,WI,8,53800,7,2,40400,7,Mallard;Wood Duck;Green-Winged Teal,32;22;7,8,14
+56,Wyoming,WY,10,3700,5,6,3800,5,Mallard;Wigeon;Green-Winged Teal,62;8;8,40,33
