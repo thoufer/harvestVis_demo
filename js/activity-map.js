@@ -26,7 +26,7 @@ function drawMap() {
     .attr("y", 15)
     .text("Central Flyway");
 
-    textLabels.append("text")
+  textLabels.append("text")
       .attr("x", 350)
       .attr("y", 50)
       .text("74 Days");
@@ -56,9 +56,15 @@ function drawMap() {
      .defer(d3.json, "js/FlywayBoundaryLine.geo.json")
      .defer(d3.csv, "js/States.csv", function(d){ stateInfo.set(d.id, {'name':d.name,
                                                                     'ab':d.abbrev,
-                                                                    'days':d.days,
-                                                                    'hunters':d.activeHunters,
-                                                                    'bag':d.bagPerHunter});
+                                                                    'duck_bag':d.duck_bag,
+                                                                    'duck_hunters':d.duck_hunters,
+                                                                    'duck_days': d.duck_daysAfield,
+                                                                    'goose_bag':d.goose_bag,
+                                                                    'goose_hunters': d.goose_hunters,
+                                                                    'goose_days': d.goose_daysAfield,
+                                                                    'species': d.species,
+                                                                    'rank_duck': d.rankDuck,
+                                                                    'rank_geese': d.rankGeese});
                                               })
      .await(ready);
 
@@ -73,24 +79,43 @@ function drawMap() {
        .data(topojson.feature(us, us.objects.states).features)
        .enter().append("path")
          .attr("d", path)
-         .attr("fill", function(d){
-           if(d.id === 15){
-             return "gray";
-           }
-         })
          .on("click", function(d){
-            // Do not allow clicking of Hawaii
-            if(d.id != 15){
+            if(d.id === 15){
+              // Change message for Hawaii
+              var textblock = document.createElement('div');
+              textblock.innerHTML = "Waterfowl are not hunted in <strong>Hawaii</strong>.";
+            }
+            else {
               data = stateInfo.get(d.id);
-              document.getElementById('state-value').innerHTML= data.name;
-              document.getElementById('days-value').innerHTML= (Number(data.days) / Number(data.hunters)).toFixed(0); //.toFixed(2);
-              document.getElementById('bag-value').innerHTML= Number(data.bag).toFixed(0);
+              var textblock = document.createElement('div');
 
-               // Find previously selected, unselect
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> has\n';
+              textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck hunters<br>' +
+                                                              Number(data.goose_hunters).toLocaleString() + ' goose hunters</div>\n';
+
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + '</div> ranks\n';
+              textblock.innerHTML += '<div id="tx-indent">'+ ordinal_suffix_of(data.rank_duck) + ' in duck harvest<br>'+
+                                      ordinal_suffix_of(data.rank_geese)+ ' in goose harvest</div>';
+
+              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter harvests</div>\n';
+              textblock.innerHTML += '<div id="tx-indent">'+
+                                            Number(data.duck_bag) + ' ducks in ' + Number(data.duck_days) + ' days afield<br>' +
+                                            Number(data.goose_bag) + ' geese in ' + Number(data.goose_days) + ' days afield </div>\n';
+
+              textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">Top harvested ducks</div>\n';
+              textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
+            }
+              var panel = document.getElementById('data-panel');
+              if (panel.hasChildNodes()){
+                 panel.replaceChild(textblock, panel.childNodes[0]);
+              } else {
+                panel.appendChild(textblock);
+              }
+
+              // Find previously selected, unselect
               d3.select(".selected").classed("selected", false);
               // Select current item
               d3.select(this).classed("selected", true);
-            }
           });
 
 
@@ -111,13 +136,26 @@ function drawMap() {
          .attr("stroke-width", "3px");
    };
 
-
-
-   function resize() {
+function resize() {
      width = $('#map-container').width(), height = $('#map-container').height();
      svg.attr("width", width).attr("height", height)
      svg.size([width, height]);
      console.log(width, height)
    };
+}
+
+function ordinal_suffix_of(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "<sup>st</sup>";
+    }
+    if (j == 2 && k != 12) {
+        return i + "<sup>nd</sup>";
+    }
+    if (j == 3 && k != 13) {
+        return i + "<sup>rd</sup>";
+    }
+    return i + "<sup>th</sup>";
 }
 drawMap();

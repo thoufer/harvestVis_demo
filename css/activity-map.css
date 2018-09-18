@@ -24,20 +24,12 @@
 }
 
 .label {
-    color: #002868;
-    font-family: "Arial Narrow", Arial, sans-serif;
-    margin: 5px 0px;
-   /* font-size: 20px;*/
+  margin: 5px 0px;
 }
 
 .state {
-    /*font-size: 28px;*/
-    display: inline;
-	font-weight: bold;
-}
-
-.data-value {
-  margin-top: 10px;
+  display: inline;
+  font-weight: bold;
 }
 
 #container {
@@ -60,6 +52,17 @@
   font-family: sans-serif;
 }
 
+div#tx-indent {
+  margin-left: 16px;
+  margin-bottom: 15px;
+  font-size: 14pt;
+  position: relative;
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap
+}
+
 div#map-text {
   position: absolute;
   margin-left: 80px;
@@ -74,8 +77,12 @@ div#map-text div {
 
 div#data-panel {
   display: block;
-  margin-left: 10px;
-  font-size: 16pt;
+  margin-left: 0px;
+  font-size: 15pt;
+  color: #002868;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  white-space: nowrap;
+  width: min-content;
 }
 
 /* barchart css*/
@@ -85,66 +92,70 @@ div#data-panel {
 
 .axis path,
 .axis line {
-   stroke: #000;
+  stroke: #000;
 }
 
 svg text {
-   font-size: 16px;
-   font-family: sans-serif;
+  font-size: 16px;
+  font-family: sans-serif;
 }
 
 .btn .btn-primary {
-   margin-right: 20px;
+  margin-right: 20px;
 }
 
 .button-holder{
-    text-align: center;
+  text-align: center;
 }
 
 .button-holder a {
   text-decoration: none;
 }
 
+.mgmt_unit.boundary {
+  cursor: pointer;
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
 .mgmt_unit {
   cursor: pointer;
+  fill: #6BAED6;
 }
 
-.PF-North {
-  fill: #f7fbff;
-}
-
-.PF-South {
-  fill: #deebf7;
-}
-
-.CF-North {
-  fill: #c6dbef;
-}
-
-.CF-South {
-  fill: #9ecae1;
-}
-.MF-North {
-  fill: #6baed6;
-}
-
-.MF-South {
-  fill: #4292c6;
-}
-
-.AF-North {
-  fill: #2171b5;
-}
-
-.AF-South {
+.selected-unit {
   fill: #084594;
 }
 
+.state-borders.white {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  visibility: hidden;
+}
 
 .exempt {
   fill: 'grey';
 }
 
 #mapid {
-  padding-top: 10px;
+  padding-top: 20px;
+}
+
+/*text css*/
+#subhead-text {
+  display: block;
+  margin-left: 10px;
+  font-size: 16pt;
+  color: #002868;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
 }
