@@ -15,7 +15,7 @@ file1 <- "CountyName_fips.csv"
 
 harvestFIPS <- read.csv(paste0(Path,file1),quote="", as.is=T)
 # remove AK and HI
-harvestFIPS <- harvestFIPS[!(round(harvestFIPS$FIPS/1000) %in% c(2,15)),]
+#harvestFIPS <- harvestFIPS[!(round(harvestFIPS$FIPS/1000) %in% c(2,15)),] # not cut as they are needed for the graphic ....
 
 harvestFIPS <- harvestFIPS %>% mutate(state = round(FIPS/1000)) %>% group_by(state) %>% mutate(countyNo = n()) %>% ungroup
 
@@ -30,7 +30,7 @@ harvestByCounty <- left_join(harvestByCounty,harvestByState) %>% mutate(harvest_
 # 
 harvestByCounty <- spread(harvestByCounty, Taxa, harvest_adj)
 
-harvestByCounty <- right_join(harvestByCounty, harvestFIPS)
+harvestByCounty <- right_join(harvestByCounty, harvestFIPS[!(harvestFIPS$state %in% c(2,15)),]) # Add FIPS with 0 hunting for state rankings, etc. 3110 relevant counties
 
 harvestByCounty[is.na(harvestByCounty)]<-0
 
@@ -38,6 +38,10 @@ harvestByCounty <- harvestByCounty %>% ungroup %>% mutate(rankDuck = rank(-Ducks
 
 harvestByCounty <- harvestByCounty %>% mutate(percentileDuck = ifelse(Ducks==0,0,(3110-sum(Ducks==0)+1-rankDuck)/(3110-sum(Ducks==0)+1)), percentileGeese = ifelse(Geese==0,0,(3110-sum(Geese==0)+1-rankGeese)/(3110-sum(Geese==0)+1))) # percentiles = j/n+1 j = n largest harvest, n = # counties with >0 harvest, percentile no harvest = 0
 
-harvestByCounty <- harvestByCounty %>% group_by(state) %>% mutate(stateRankDuck = rank(-Ducks), stateRankGeese = rank(-Geese))
+harvestByCounty <- harvestByCounty %>% group_by(state) %>% mutate(stateRankDuck = rank(-Ducks), stateRankGeese = rank(-Geese)) %>% ungroup
 
-write.table(harvestByCounty,"H:\\My Docs\\Data\\Hackathons\\HarvestSurveyHack_Sept2017\\harvestVis_demo\\data\\Counties.csv", sep=",", quote=F, row.names = F)
+harvestByCounty <- right_join(harvestByCounty, harvestFIPS) # add in AK and HI FIPS
+
+harvestByCounty$FIPS <- str_pad(harvestByCounty$FIPS,width=5,side="left", pad="0") # add leading 0
+
+write.table(harvestByCounty,"H:\\My Docs\\Data\\Hackathons\\HarvestSurveyHack_Sept2017\\harvestVis_demo\\js\\Counties.csv", sep=",", quote=F, row.names = F)
