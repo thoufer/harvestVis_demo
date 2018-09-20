@@ -38,12 +38,22 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
 	box-shadow: 3px 3px 3px 0px #444444;
 }
 
- /* Style the Image Used to Trigger the Modal */
+/* Style the Image Used to Trigger the Modal */
 .myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
+
+/*override horizontal rule style*/
+hr {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #727272 !important; 
+  margin: 0 !important;
+}
+
 
 .myImg:hover {opacity: 0.7;}
 

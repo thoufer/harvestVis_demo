@@ -59,14 +59,14 @@ cursor: pointer;
   color: black;
   line-height: 120%;
 }
-h1{
+/*h1{
   color:black;
   font-size:32px;
   text-align:center;
   display:inline-block;
   position:relative;
   width:100%;
-   }
+   }*/
 td.indented 
 { 
   /*margin-bottom: -1.62em;
