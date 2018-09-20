@@ -35,6 +35,10 @@ statesData <- left_join(stateIDs, statesData)
 
 statesData <- statesData[,c(1:9,12:13,10:11)] # order to match previous file
 
+statesData <- left_join(statesData, specieComposition, by = c("abbrev" = "ST"))[,-1]
+  
+statesData <- statesData[,c(1:7,10:11,8:9)] # order to match previous file
+  
 # Write output into States.csv ....
 write.table(statesData, "H:\\My Docs\\Data\\Hackathons\\HarvestSurveyHack_Sept2017\\harvestVis_demo\\data\\States.csv", sep=",", row.names = F, quote = F)
   

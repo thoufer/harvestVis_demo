@@ -1,326 +1,324 @@
 FIPS,countyName
-1001,Autauga County
-1003,Baldwin County
-1005,Barbour County
-1007,Bibb County
-1009,Blount County
-1011,Bullock County
-1013,Butler County
-1015,Calhoun County
-1017,Chambers County
-1019,Cherokee County
-1021,Chilton County
-1023,Choctaw County
-1025,Clarke County
-1027,Clay County
-1029,Cleburne County
-1031,Coffee County
-1033,Colbert County
-1035,Conecuh County
-1037,Coosa County
-1039,Covington County
-1041,Crenshaw County
-1043,Cullman County
-1045,Dale County
-1047,Dallas County
-1049,DeKalb County
-1051,Elmore County
-1053,Escambia County
-1055,Etowah County
-1057,Fayette County
-1059,Franklin County
-1061,Geneva County
-1063,Greene County
-1065,Hale County
-1067,Henry County
-1069,Houston County
-1071,Jackson County
-1073,Jefferson County
-1075,Lamar County
-1077,Lauderdale County
-1079,Lawrence County
-1081,Lee County
-1083,Limestone County
-1085,Lowndes County
-1087,Macon County
-1089,Madison County
-1091,Marengo County
-1093,Marion County
-1095,Marshall County
-1097,Mobile County
-1099,Monroe County
-1101,Montgomery County
-1103,Morgan County
-1105,Perry County
-1107,Pickens County
-1109,Pike County
-1111,Randolph County
-1113,Russell County
-1115,St. Clair County
-1117,Shelby County
-1119,Sumter County
-1121,Talladega County
-1123,Tallapoosa County
-1125,Tuscaloosa County
-1127,Walker County
-1129,Washington County
-1131,Wilcox County
-1133,Winston County
-2000,NA
-2013,NA
-2016,NA
-2020,NA
-2050,NA
-2060,NA
-2068,NA
-2070,NA
-2090,NA
-2100,NA
-2105,NA
-2110,NA
-2220,NA
-2122,NA
-2130,NA
-2150,NA
-2158,NA
-2164,NA
-2170,NA
-2180,NA
-2185,NA
-2188,NA
-2195,NA
-2198,NA
-2220,NA
-2230,NA
-2240,NA
-2261,NA
-2275,NA
-2282,NA
-2290,NA
-4001,Apache County
-4003,Cochise County
-4005,Coconino County
-4007,Gila County
-4009,Graham County
-4011,Greenlee County
-4012,La Paz County
-4013,Maricopa County
-4015,Mohave County
-4017,Navajo County
-4019,Pima County
-4021,Pinal County
-4023,Santa Cruz County
-4025,Yavapai County
-4027,Yuma County
-5001,Arkansas County
-5003,Ashley County
-5005,Baxter County
-5007,Benton County
-5009,Boone County
-5011,Bradley County
-5013,Calhoun County
-5015,Carroll County
-5017,Chicot County
-5019,Clark County
-5021,Clay County
-5023,Cleburne County
-5025,Cleveland County
-5027,Columbia County
-5029,Conway County
-5031,Craighead County
-5033,Crawford County
-5035,Crittenden County
-5037,Cross County
-5039,Dallas County
-5041,Desha County
-5043,Drew County
-5045,Faulkner County
-5047,Franklin County
-5049,Fulton County
-5051,Garland County
-5053,Grant County
-5055,Greene County
-5057,Hempstead County
-5059,Hot Spring County
-5061,Howard County
-5063,Independence County
-5065,Izard County
-5067,Jackson County
-5069,Jefferson County
-5071,Johnson County
-5073,Lafayette County
-5075,Lawrence County
-5077,Lee County
-5079,Lincoln County
-5081,Little River County
-5083,Logan County
-5085,Lonoke County
-5087,Madison County
-5089,Marion County
-5091,Miller County
-5093,Mississippi County
-5095,Monroe County
-5097,Montgomery County
-5099,Nevada County
-5101,Newton County
-5103,Ouachita County
-5105,Perry County
-5107,Phillips County
-5109,Pike County
-5111,Poinsett County
-5113,Polk County
-5115,Pope County
-5117,Prairie County
-5119,Pulaski County
-5121,Randolph County
-5123,St. Francis County
-5125,Saline County
-5127,Scott County
-5129,Searcy County
-5131,Sebastian County
-5133,Sevier County
-5135,Sharp County
-5137,Stone County
-5139,Union County
-5141,Van Buren County
-5143,Washington County
-5145,White County
-5147,Woodruff County
-5149,Yell County
-6001,Alameda County
-6003,Alpine County
-6005,Amador County
-6007,Butte County
-6009,Calaveras County
-6011,Colusa County
-6013,Contra Costa County
-6015,Del Norte County
-6017,El Dorado County
-6019,Fresno County
-6021,Glenn County
-6023,Humboldt County
-6025,Imperial County
-6027,Inyo County
-6029,Kern County
-6031,Kings County
-6033,Lake County
-6035,Lassen County
-6037,Los Angeles County
-6039,Madera County
-6041,Marin County
-6043,Mariposa County
-6045,Mendocino County
-6047,Merced County
-6049,Modoc County
-6051,Mono County
-6053,Monterey County
-6055,Napa County
-6057,Nevada County
-6059,Orange County
-6061,Placer County
-6063,Plumas County
-6065,Riverside County
-6067,Sacramento County
-6069,San Benito County
-6071,San Bernardino County
-6073,San Diego County
-6075,San Francisco County
-6077,San Joaquin County
-6079,San Luis Obispo County
-6081,San Mateo County
-6083,Santa Barbara County
-6085,Santa Clara County
-6087,Santa Cruz County
-6089,Shasta County
-6091,Sierra County
-6093,Siskiyou County
-6095,Solano County
-6097,Sonoma County
-6099,Stanislaus County
-6101,Sutter County
-6103,Tehama County
-6105,Trinity County
-6107,Tulare County
-6109,Tuolumne County
-6111,Ventura County
-6113,Yolo County
-6115,Yuba County
-8001,Adams County
-8003,Alamosa County
-8005,Arapahoe County
-8007,Archuleta County
-8009,Baca County
-8011,Bent County
-8013,Boulder County
-8014,NA
-8015,Chaffee County
-8017,Cheyenne County
-8019,Clear Creek County
-8021,Conejos County
-8023,Costilla County
-8025,Crowley County
-8027,Custer County
-8029,Delta County
-8031,Denver County
-8033,Dolores County
-8035,Douglas County
-8037,Eagle County
-8039,Elbert County
-8041,El Paso County
-8043,Fremont County
-8045,Garfield County
-8047,Gilpin County
-8049,Grand County
-8051,Gunnison County
-8053,Hinsdale County
-8055,Huerfano County
-8057,Jackson County
-8059,Jefferson County
-8061,Kiowa County
-8063,Kit Carson County
-8065,Lake County
-8067,La Plata County
-8069,Larimer County
-8071,Las Animas County
-8073,Lincoln County
-8075,Logan County
-8077,Mesa County
-8079,Mineral County
-8081,Moffat County
-8083,Montezuma County
-8085,Montrose County
-8087,Morgan County
-8089,Otero County
-8091,Ouray County
-8093,Park County
-8095,Phillips County
-8097,Pitkin County
-8099,Prowers County
-8101,Pueblo County
-8103,Rio Blanco County
-8105,Rio Grande County
-8107,Routt County
-8109,Saguache County
-8111,San Juan County
-8113,San Miguel County
-8115,Sedgwick County
-8117,Summit County
-8119,Teller County
-8121,Washington County
-8123,Weld County
-8125,Yuma County
-9001,Fairfield County
-9003,Hartford County
-9005,Litchfield County
-9007,Middlesex County
-9009,New Haven County
-9011,New London County
-9013,Tolland County
-9015,Windham County
+01001,Autauga County
+01003,Baldwin County
+01005,Barbour County
+01007,Bibb County
+01009,Blount County
+01011,Bullock County
+01013,Butler County
+01015,Calhoun County
+01017,Chambers County
+01019,Cherokee County
+01021,Chilton County
+01023,Choctaw County
+01025,Clarke County
+01027,Clay County
+01029,Cleburne County
+01031,Coffee County
+01033,Colbert County
+01035,Conecuh County
+01037,Coosa County
+01039,Covington County
+01041,Crenshaw County
+01043,Cullman County
+01045,Dale County
+01047,Dallas County
+01049,DeKalb County
+01051,Elmore County
+01053,Escambia County
+01055,Etowah County
+01057,Fayette County
+01059,Franklin County
+01061,Geneva County
+01063,Greene County
+01065,Hale County
+01067,Henry County
+01069,Houston County
+01071,Jackson County
+01073,Jefferson County
+01075,Lamar County
+01077,Lauderdale County
+01079,Lawrence County
+01081,Lee County
+01083,Limestone County
+01085,Lowndes County
+01087,Macon County
+01089,Madison County
+01091,Marengo County
+01093,Marion County
+01095,Marshall County
+01097,Mobile County
+01099,Monroe County
+01101,Montgomery County
+01103,Morgan County
+01105,Perry County
+01107,Pickens County
+01109,Pike County
+01111,Randolph County
+01113,Russell County
+01115,St. Clair County
+01117,Shelby County
+01119,Sumter County
+01121,Talladega County
+01123,Tallapoosa County
+01125,Tuscaloosa County
+01127,Walker County
+01129,Washington County
+01131,Wilcox County
+01133,Winston County
+02013,Aleutians East Borough
+02016,Aleutians West Census Area
+02020,Anchorage Municipality
+02050,Bethel Census Area
+02060,Bristol Bay Borough
+02068,Denali Borough
+02070,Dillingham Census Area
+02090,Fairbanks North Star Borough
+02100,Haines Borough
+02105,Hoonah-Angoon Census Area
+02110,Juneau City and Borough
+02122,Kenai Peninsula Borough
+02130,Ketchikan Gateway Borough
+02150,Kodiak Island Borough
+02158,Kusilvak Census Area
+02164,Lake and Peninsula Borough
+02170,Matanuska-Susitna Borough
+02180,Nome Census Area
+02185,North Slope Borough
+02188,Nortwest Arctic Borough
+02195,Petersburg Borough
+02198,Prince of Wales-Hyder Census Area
+02220,Sitka City and Borough
+02230,Skagway Municipality
+02240,Southeast Fairbanks Census Area
+02261,Valdez-Cordova Census Area
+02275,Wrangell City and Borough
+02282,Yakutat City and Borough
+02290,Yukon-Koyukuk Census Area
+04001,Apache County
+04003,Cochise County
+04005,Coconino County
+04007,Gila County
+04009,Graham County
+04011,Greenlee County
+04012,La Paz County
+04013,Maricopa County
+04015,Mohave County
+04017,Navajo County
+04019,Pima County
+04021,Pinal County
+04023,Santa Cruz County
+04025,Yavapai County
+04027,Yuma County
+05001,Arkansas County
+05003,Ashley County
+05005,Baxter County
+05007,Benton County
+05009,Boone County
+05011,Bradley County
+05013,Calhoun County
+05015,Carroll County
+05017,Chicot County
+05019,Clark County
+05021,Clay County
+05023,Cleburne County
+05025,Cleveland County
+05027,Columbia County
+05029,Conway County
+05031,Craighead County
+05033,Crawford County
+05035,Crittenden County
+05037,Cross County
+05039,Dallas County
+05041,Desha County
+05043,Drew County
+05045,Faulkner County
+05047,Franklin County
+05049,Fulton County
+05051,Garland County
+05053,Grant County
+05055,Greene County
+05057,Hempstead County
+05059,Hot Spring County
+05061,Howard County
+05063,Independence County
+05065,Izard County
+05067,Jackson County
+05069,Jefferson County
+05071,Johnson County
+05073,Lafayette County
+05075,Lawrence County
+05077,Lee County
+05079,Lincoln County
+05081,Little River County
+05083,Logan County
+05085,Lonoke County
+05087,Madison County
+05089,Marion County
+05091,Miller County
+05093,Mississippi County
+05095,Monroe County
+05097,Montgomery County
+05099,Nevada County
+05101,Newton County
+05103,Ouachita County
+05105,Perry County
+05107,Phillips County
+05109,Pike County
+05111,Poinsett County
+05113,Polk County
+05115,Pope County
+05117,Prairie County
+05119,Pulaski County
+05121,Randolph County
+05123,St. Francis County
+05125,Saline County
+05127,Scott County
+05129,Searcy County
+05131,Sebastian County
+05133,Sevier County
+05135,Sharp County
+05137,Stone County
+05139,Union County
+05141,Van Buren County
+05143,Washington County
+05145,White County
+05147,Woodruff County
+05149,Yell County
+06001,Alameda County
+06003,Alpine County
+06005,Amador County
+06007,Butte County
+06009,Calaveras County
+06011,Colusa County
+06013,Contra Costa County
+06015,Del Norte County
+06017,El Dorado County
+06019,Fresno County
+06021,Glenn County
+06023,Humboldt County
+06025,Imperial County
+06027,Inyo County
+06029,Kern County
+06031,Kings County
+06033,Lake County
+06035,Lassen County
+06037,Los Angeles County
+06039,Madera County
+06041,Marin County
+06043,Mariposa County
+06045,Mendocino County
+06047,Merced County
+06049,Modoc County
+06051,Mono County
+06053,Monterey County
+06055,Napa County
+06057,Nevada County
+06059,Orange County
+06061,Placer County
+06063,Plumas County
+06065,Riverside County
+06067,Sacramento County
+06069,San Benito County
+06071,San Bernardino County
+06073,San Diego County
+06075,San Francisco County
+06077,San Joaquin County
+06079,San Luis Obispo County
+06081,San Mateo County
+06083,Santa Barbara County
+06085,Santa Clara County
+06087,Santa Cruz County
+06089,Shasta County
+06091,Sierra County
+06093,Siskiyou County
+06095,Solano County
+06097,Sonoma County
+06099,Stanislaus County
+06101,Sutter County
+06103,Tehama County
+06105,Trinity County
+06107,Tulare County
+06109,Tuolumne County
+06111,Ventura County
+06113,Yolo County
+06115,Yuba County
+08001,Adams County
+08003,Alamosa County
+08005,Arapahoe County
+08007,Archuleta County
+08009,Baca County
+08011,Bent County
+08013,Boulder County
+08014,Broomfield County
+08015,Chaffee County
+08017,Cheyenne County
+08019,Clear Creek County
+08021,Conejos County
+08023,Costilla County
+08025,Crowley County
+08027,Custer County
+08029,Delta County
+08031,Denver County
+08033,Dolores County
+08035,Douglas County
+08037,Eagle County
+08039,Elbert County
+08041,El Paso County
+08043,Fremont County
+08045,Garfield County
+08047,Gilpin County
+08049,Grand County
+08051,Gunnison County
+08053,Hinsdale County
+08055,Huerfano County
+08057,Jackson County
+08059,Jefferson County
+08061,Kiowa County
+08063,Kit Carson County
+08065,Lake County
+08067,La Plata County
+08069,Larimer County
+08071,Las Animas County
+08073,Lincoln County
+08075,Logan County
+08077,Mesa County
+08079,Mineral County
+08081,Moffat County
+08083,Montezuma County
+08085,Montrose County
+08087,Morgan County
+08089,Otero County
+08091,Ouray County
+08093,Park County
+08095,Phillips County
+08097,Pitkin County
+08099,Prowers County
+08101,Pueblo County
+08103,Rio Blanco County
+08105,Rio Grande County
+08107,Routt County
+08109,Saguache County
+08111,San Juan County
+08113,San Miguel County
+08115,Sedgwick County
+08117,Summit County
+08119,Teller County
+08121,Washington County
+08123,Weld County
+08125,Yuma County
+09001,Fairfield County
+09003,Hartford County
+09005,Litchfield County
+09007,Middlesex County
+09009,New Haven County
+09011,New London County
+09013,Tolland County
+09015,Windham County
 10001,Kent County
 10003,New Castle County
 10005,Sussex County
-11001,NA
+11001,Washington DC
 12001,Alachua County
 12003,Baker County
 12005,Bay County
@@ -363,7 +361,7 @@ FIPS,countyName
 12081,Manatee County
 12083,Marion County
 12085,Martin County
-12086,NA
+12086,Miami-Dade County
 12087,Monroe County
 12089,Nassau County
 12091,Okaloosa County
@@ -547,11 +545,11 @@ FIPS,countyName
 13317,Wilkes County
 13319,Wilkinson County
 13321,Worth County
-15001,NA
-15003,NA
-15005,NA
-15007,NA
-15009,NA
+15001,Hawaii
+15003,Honolulu
+15005,Kalawao County
+15007,Kauai
+15009,Maui
 16001,Ada County
 16003,Adams County
 16005,Bannock County
@@ -1217,7 +1215,7 @@ FIPS,countyName
 24043,Washington County
 24045,Wicomico County
 24047,Worcester County
-24510,NA
+24510,Baltimore City
 25001,Barnstable County
 25003,Berkshire County
 25005,Bristol County
@@ -1577,7 +1575,7 @@ FIPS,countyName
 29181,Ripley County
 29183,St. Charles County
 29185,St. Clair County
-29186,NA
+29186,Ste. Genevieve
 29187,St. Francois County
 29189,St. Louis County
 29195,Saline County
@@ -1598,7 +1596,7 @@ FIPS,countyName
 29225,Webster County
 29227,Worth County
 29229,Wright County
-29510,NA
+29510,St. Louis City
 30001,Beaverhead County
 30003,Big Horn County
 30005,Blaine County
@@ -1764,7 +1762,7 @@ FIPS,countyName
 32029,Storey County
 32031,Washoe County
 32033,White Pine County
-32510,NA
+32510,Carson City
 33001,Belknap County
 33003,Carroll County
 33005,Cheshire County
@@ -2413,7 +2411,7 @@ FIPS,countyName
 46097,Miner County
 46099,Minnehaha County
 46101,Moody County
-46102,NA
+46102,Oglala Lakota County
 46103,Pennington County
 46105,Perkins County
 46107,Potter County
@@ -2922,7 +2920,7 @@ FIPS,countyName
 51520,Bristol County
 51530,Buena Vista County
 51540,Charlottesville County
-51550,NA
+51550,Chesapeake City
 51570,Colonial Heights County
 51580,Covington County
 51590,Danville County
@@ -2932,7 +2930,7 @@ FIPS,countyName
 51620,Franklin City County
 51630,Fredericksburg County
 51640,Galax County
-51650,NA
+51650,Hampton City
 51660,Harrisonburg County
 51670,Hopewell County
 51678,Lexington County
@@ -2940,7 +2938,7 @@ FIPS,countyName
 51683,Manassas City County
 51685,Manassas Park City County
 51690,Martinsville County
-51700,NA
+51700,Newport News City
 51710,Norfolk County
 51720,Norton County
 51730,Petersburg County
@@ -2951,8 +2949,8 @@ FIPS,countyName
 51770,Roanoke City County
 51775,Salem County
 51790,Staunton County
-51800,NA
-51810,NA
+51800,Sulfolk City
+51810,Virginia Beach City
 51820,Waynesboro County
 51830,Williamsburg County
 51840,Winchester County
