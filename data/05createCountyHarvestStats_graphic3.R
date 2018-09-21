@@ -17,40 +17,59 @@ harvestFIPS <- read.csv(paste0(Path,file1),quote="", as.is=T)
 # remove AK and HI
 #harvestFIPS <- harvestFIPS[!(round(harvestFIPS$FIPS/1000) %in% c(2,15)),] # not cut as they are needed for the graphic ....
 
-harvestFIPS <- harvestFIPS %>% mutate(state = floor(FIPS/1000)) %>% group_by(state) %>% mutate(countyNo = n()) %>% ungroup
+harvestFIPS <- harvestFIPS %>% 
+  mutate(state = floor(FIPS/1000)) %>% 
+  group_by(state) %>% 
+  mutate(countyNo = n()) %>% 
+  ungroup
 
+# pull state abbrev and state FIPS from PCS frame .... (better if in file1)
+harvestFIPS <-left_join(harvestFIPS,PCSData_2017 %>% 
+                                      mutate(state = floor(FIPS/1000)) %>% 
+                                      group_by(ST, state) %>% 
+                                      summarize(count=n()) %>% 
+                                      select(abbrev = ST, state))
+# Washington DC is missing from PCS and entered as "Washington DC" ... edit:
+harvestFIPS[harvestFIPS$state == 11,c("countyName","abbrev")] <- c("Washington","DC")
+# HI is missing from PCS, add abbreviation:
+harvestFIPS[harvestFIPS$state == 15,c("abbrev")] <- "HI"
+
+  
 harvestByCounty <- PCSData_2017 %>% 
-  group_by(FIPS, ST, Taxa) %>% 
+  group_by(FIPS, Taxa) %>% 
   summarize(harvest = sum(Wt)/10) %>% 
   mutate(state = floor(FIPS/1000), 
          county = FIPS - 1000*state, 
-         harvestCo = ifelse(county != 0, harvest, 0))
+         harvestCo = ifelse(county != 0, harvest, 0)) %>% # county = 0 are state only FIPS
+  ungroup
 
 # Adjust county totals for the harvest recorded only to state (* state-total/all_counties-total)
 harvestByState <- harvestByCounty %>% 
   group_by(state) %>% 
-  summarize(adjHarvest = sum(harvest)/sum(harvestCo))
+  summarize(adjHarvest = sum(harvest)/sum(harvestCo)) %>%
+  ungroup
 
 harvestByCounty <- left_join(harvestByCounty,harvestByState) %>% 
   mutate(harvest_adj = harvest * adjHarvest) %>% 
   filter(county > 0) %>% 
-  select(FIPS, ST, Taxa, harvest_adj)
+  select(FIPS, Taxa, harvest_adj)
 
 # 
 harvestByCounty <- spread(harvestByCounty, Taxa, harvest_adj)
 
-
-harvestByCounty <- right_join(harvestByCounty, harvestFIPS[!(harvestFIPS$state %in% c(2,11,15)),]) # Add FIPS with 0 hunting for state rankings, etc. 3109 relevant counties
+# Add FIPS with 0 hunting for state rankings, etc. 3114 relevant counties/census units
+harvestByCounty <- right_join(harvestByCounty, harvestFIPS[!(harvestFIPS$abbrev %in% c("AK","DC","HI")),]) 
 
 harvestByCounty[is.na(harvestByCounty)]<-0
 
 harvestByCounty <- harvestByCounty %>% 
-  ungroup %>% 
   mutate(rankDuck = rank(-Ducks), rankGeese = rank(-Geese)) # rank highest to lowest harvest
 
+numCo <- nrow(harvestByCounty)
+
 harvestByCounty <- harvestByCounty %>% 
-  mutate(percentileDuck = ifelse(Ducks==0,0,(3109-sum(Ducks==0)+1-rankDuck)/(3109-sum(Ducks==0)+1)), 
-         percentileGeese = ifelse(Geese==0,0,(3109-sum(Geese==0)+1-rankGeese)/(3109-sum(Geese==0)+1))) 
+  mutate(percentileDuck = ifelse(Ducks==0,0,(numCo-sum(Ducks==0)+1-rankDuck)/(numCo-sum(Ducks==0)+1)), 
+         percentileGeese = ifelse(Geese==0,0,(numCo-sum(Geese==0)+1-rankGeese)/(numCo-sum(Geese==0)+1))) 
 # percentiles = j/n+1 j = n largest harvest, n = # counties with >0 harvest, percentile no harvest = 0
 
 
