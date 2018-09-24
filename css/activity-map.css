@@ -159,3 +159,116 @@ canvas {
   font-family: "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
 }
+
+
+/* Ranking map css */
+div#rank-map {
+  margin:5%;
+  padding:20px;
+  width: 960px;
+  position: relative;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.counties {
+    fill: gainsboro;
+}
+
+.active {
+  fill: #336699;
+}
+.county-borders {
+    fill: none;
+    stroke: #696969;
+    stroke-width: .1px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.borders-dark {
+    fill: none;
+    stroke: #000;
+    stroke-width: .5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+#selector ul.option {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+#selector ul.option li {
+  color: #545454;
+  background-color: #EBEBEB;
+  padding: 10px;
+  border-right: 2px solid #919191;
+  margin: 0;
+}
+
+#selector ul.option li:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#selector ul.option li:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: none;
+}
+
+#selector ul.option li:hover {
+  color: #545454;
+  background-color: #EBEBEB;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#selector ul.option li.selected {
+  background-color: #545454;
+  color: #EBEBEB;
+}
+
+.navButtons {
+  height: 90px;
+  position: absolute;
+  top: 5%;
+}
+
+.zoom {
+  background-color: gray;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 3px;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+
+.out {
+  line-height: 35px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    padding: 2px 5px;
+    font: 12px sans-serif;
+    background: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    pointer-events: none;
+}
