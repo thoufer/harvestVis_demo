@@ -140,7 +140,6 @@ function resize() {
      width = $('#map-container').width(), height = $('#map-container').height();
      svg.attr("width", width).attr("height", height)
      svg.size([width, height]);
-     console.log(width, height)
    };
 }
 
