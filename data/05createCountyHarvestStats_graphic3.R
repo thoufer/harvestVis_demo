@@ -82,5 +82,12 @@ harvestByCounty <- right_join(harvestByCounty, harvestFIPS) # add in AK, HI, and
 
 harvestByCounty$FIPS <- str_pad(harvestByCounty$FIPS,width=5,side="left", pad="0") # add leading 0
 
-write.table(harvestByCounty,"H:\\My Docs\\Data\\Hackathons\\HarvestSurveyHack_Sept2017\\harvestVis_demo\\js\\Counties.csv", sep=",", quote=F, row.names = F)
+# change 0s to NAs for duck harvest = 0 and goose harvest = 0 so that tooltip says "No harvest reported in survey."
+harvestByCounty$rankDuck[harvestByCounty$Ducks == 0] <- NA
+harvestByCounty$rankGeese[harvestByCounty$Geese == 0] <- NA
+
+harvestByCounty$stateRankDuck[harvestByCounty$Ducks == 0] <- NA
+harvestByCounty$stateRankGeese[harvestByCounty$Geese == 0] <- NA
+
+write.table(harvestByCounty,"H:\\My Docs\\Data\\Hackathons\\HarvestSurveyHack_Sept2017\\harvestVis_demo\\js\\Counties.csv", sep=",", quote=F, na = "", row.names = F)
 
