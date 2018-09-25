@@ -120,9 +120,9 @@ function clicked(d, us){
 
   var CountySpec = d.id.slice(0,2) != '22' ? " counties" : " parishes";
 
-  if(+d.id > 15000 && +d.id < 15010){
+  if(d.id.slice(0,2) == '15'){
     tooltipText = "Migatory birds are not hunted in Hawaii.";
-  } else if (+d.id > 2000 && +d.id < 3000 ){
+  } else if (d.id.slice(0,2) == '02'){
     tooltipText = "Survey data are not collected at the county level in Alaska.";
   } else if (isNaN(textmap["nation-rank"])) {
     tooltipText = "No harvest reported in survey.";
