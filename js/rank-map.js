@@ -118,6 +118,8 @@ function clicked(d, us){
                'state-counties': rankings.get(d.id).counties_in_state};
   }
 
+  var CountySpec = d.id.slice(0,2) != '22' ? " counties" : " parishes";
+
   if(+d.id > 15000 && +d.id < 15010){
     tooltipText = "Migatory birds are not hunted in Hawaii.";
   } else if (+d.id > 2000 && +d.id < 3000 ){
@@ -127,7 +129,7 @@ function clicked(d, us){
   }else {
     tooltipText = textmap['name'] + ', ' + textmap['abbreviation'] + ' ranks '+
                   ordinal_suffix_of(textmap['state-rank'].toLocaleString())
-                  + ' out of ' + textmap['state-counties'] + ' counties in the state and ' +
+                  + ' out of ' + textmap['state-counties'] + CountySpec +' in the state and ' +
                   ordinal_suffix_of(textmap['nation-rank'].toLocaleString()) + ' out of ' +
                   '3,115 in the U.S.';
   }
