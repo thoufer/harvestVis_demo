@@ -2,16 +2,17 @@ $(document).ready(function(){
   $("ul.option li").click(function(){
       $(this).addClass("selected");
       $(this).siblings().removeClass("selected");
+      $('.ttip').css({opacity: 0});
   });
 
-  $("#rank-duck").addClass("selected")
+  $("#rank-duck").addClass("selected");
 });
 
 var color = d3.scaleQuantize()
     .domain([0,1])
     .range(['#e5f5f9','#ccece6','#99d8c9','#66c2a4','#41ae76','#238b45','#006d2c','#00441b']);
 var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
+    .attr("class", "ttip")
     .style("opacity", 0);
 
 var rankings = d3.map();
@@ -148,7 +149,7 @@ function reset() {
   active = d3.select(null);
 
   // remove last tooltip
-  div.style("opacity", "0");
+  d3.select('.ttip').style("opacity", "0");
 }
 
 function changeRank(value){
