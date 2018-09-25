@@ -26,10 +26,7 @@ function createRankMap(){
   var width = 960, height = 550
       active = d3.select(null);
 
-
-
   var zoomed = function() {
-    reset();
     zoomLayer.attr("transform", d3.event.transform);
   }
 
