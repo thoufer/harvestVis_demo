@@ -107,14 +107,14 @@ function clicked(d, us){
   if (rankValue == 'duck') {
     textmap = {'name': rankings.get(d.id).name,
                'abbreviation': rankings.get(d.id).state,
-               'nation-rank': rankings.get(d.id).duck_rank,
-               'state-rank': rankings.get(d.id).duck_rank_in_state,
+               'nation-rank': Math.floor(rankings.get(d.id).duck_rank),
+               'state-rank': Math.floor(rankings.get(d.id).duck_rank_in_state),
                'state-counties': rankings.get(d.id).counties_in_state};
   } else {
     textmap = {'name': rankings.get(d.id).name,
                'abbreviation': rankings.get(d.id).state,
-               'nation-rank': rankings.get(d.id).goose_rank,
-               'state-rank': rankings.get(d.id).goose_rank_in_state,
+               'nation-rank': Math.floor(rankings.get(d.id).goose_rank),
+               'state-rank': Math.floor(rankings.get(d.id).goose_rank_in_state),
                'state-counties': rankings.get(d.id).counties_in_state};
   }
 
