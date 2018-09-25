@@ -181,6 +181,7 @@ div#rank-map {
 .active {
   fill: #336699;
 }
+
 .county-borders {
     fill: none;
     stroke: #696969;
@@ -261,7 +262,7 @@ div#rank-map {
   line-height: 35px;
 }
 
-div.tooltip {
+div.ttip {
     position: absolute;
     text-align: center;
     width: 200px;
