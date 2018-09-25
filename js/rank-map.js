@@ -124,8 +124,8 @@ function clicked(d, us){
     tooltipText = "Migatory birds are not hunted in Hawaii.";
   } else if (d.id.slice(0,2) == '02'){
     tooltipText = "Survey data are not collected at the county level in Alaska.";
-  } else if (isNaN(textmap["nation-rank"])) {
-    tooltipText = "No harvest reported in survey.";
+  } else if (textmap["nation-rank"] == 0) {
+    tooltipText = "No harvest reported to survey for " + textmap['name'] +', ' + textmap['abbreviation'];
   }else {
     tooltipText = textmap['name'] + ', ' + textmap['abbreviation'] + ' ranks '+
                   ordinal_suffix_of(textmap['state-rank'].toLocaleString())
