@@ -131,7 +131,7 @@ function clicked(d, us){
                   ordinal_suffix_of(textmap['state-rank'].toLocaleString())
                   + ' out of ' + textmap['state-counties'] + ' counties in the state and ' +
                   ordinal_suffix_of(textmap['nation-rank'].toLocaleString()) + ' out of ' +
-                  '3,114 counties surveyed in the nation.';
+                  '3,115 in the U.S.';
   }
 
   div.transition()
