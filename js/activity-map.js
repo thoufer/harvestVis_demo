@@ -85,8 +85,7 @@ function drawMap() {
               // Change message for Hawaii
               var textblock = document.createElement('div');
               textblock.innerHTML = "Waterfowl are not hunted in <strong>Hawaii</strong>.";
-            }
-            else {
+            } else {
               data = stateInfo.get(d.id);
               var textblock = document.createElement('div');
 
@@ -106,16 +105,17 @@ function drawMap() {
               textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">Top harvested ducks</div>\n';
               textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
             }
-              var panel = document.getElementById('data-panel');
-              if (panel.hasChildNodes()){
-                 panel.replaceChild(textblock, panel.childNodes[0]);
-              } else {
-                panel.appendChild(textblock);
-              }
-                // Find previously selected item, unselect
-                // then Select current item
-                selected.classed("selected", false);
-                selected = d3.select(this).classed("selected", true);
+
+            var panel = document.getElementById('data-panel');
+            if (panel.hasChildNodes()){
+               panel.replaceChild(textblock, panel.childNodes[0]);
+            } else {
+              panel.appendChild(textblock);
+            }
+            // Find previously selected item, unselect
+            // then Select current item
+            selected.classed("selected", false);
+            selected = d3.select(this).classed("selected", true);
           });
 
 
