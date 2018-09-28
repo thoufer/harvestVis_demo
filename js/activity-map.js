@@ -4,6 +4,7 @@ function drawMap() {
   var projection = d3.geoAlbersUsa()
     .scale([1050]);
   var path = d3.geoPath().projection(projection);
+  var selected = d3.select(null);
 
   resize();
   d3.select(window).on("resize", resize);
@@ -111,11 +112,10 @@ function drawMap() {
               } else {
                 panel.appendChild(textblock);
               }
-
-              // Find previously selected, unselect
-              d3.select(".selected").classed("selected", false);
-              // Select current item
-              d3.select(this).classed("selected", true);
+                // Find previously selected item, unselect
+                // then Select current item
+                selected.classed("selected", false);
+                selected = d3.select(this).classed("selected", true);
           });
 
 
