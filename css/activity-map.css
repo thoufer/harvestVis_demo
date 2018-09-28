@@ -47,6 +47,7 @@
 #activity-map {
   float: left;
 }
+
 #activity-map text {
   font-size: 16pt;
   font-family: sans-serif;
@@ -234,7 +235,7 @@ div#rank-map {
   cursor: pointer;
 }
 
-#selector ul.option li.selected {
+#selector ul.option li.btn-active {
   background-color: #545454;
   color: #EBEBEB;
 }

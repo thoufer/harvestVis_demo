@@ -1,11 +1,11 @@
 $(document).ready(function(){
   $("ul.option li").click(function(){
-      $(this).addClass("selected");
-      $(this).siblings().removeClass("selected");
+      $(this).addClass("btn-active");
+      $(this).siblings().removeClass("btn-active");
       $('.ttip').css({opacity: 0});
   });
 
-  $("#rank-duck").addClass("selected");
+  $("#rank-duck").addClass("btn-active");
 });
 
 var color = d3.scaleQuantize()
