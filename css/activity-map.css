@@ -303,3 +303,7 @@ div.ttip {
 #hmap {
   display: inline-block;
 }
+
+#hmap-container ul li{
+  margin: 0;
+}
