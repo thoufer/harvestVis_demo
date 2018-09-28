@@ -16,7 +16,7 @@ var div = d3.select("body").append("div")
     .style("opacity", 0);
 
 var rankings = d3.map();
-var rankValue = 'duck'
+var rankValue = 'duck';
 var path = d3.geoPath();
 var map_svg = d3.select("#harvest-map");
 var zoomLayer = map_svg.append("g")
@@ -27,7 +27,9 @@ function createRankMap(){
       active = d3.select(null);
 
   var zoomed = function() {
-    zoomLayer.attr("transform", d3.event.transform);
+    reset();
+    zoomLayer.attr("transform", d3.event.transform)
+      .style("cursor","hand");
   }
 
   map_svg.call(d3.zoom()
