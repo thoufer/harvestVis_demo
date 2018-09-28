@@ -274,3 +274,32 @@ div.ttip {
     border-radius: 8px;
     pointer-events: none;
 }
+
+.legend {
+  font-size: 12pt;
+}
+
+.legend li {
+  display: block;
+  height: 25px;
+}
+
+.legend span {
+  float: left;
+  width: 20px;
+  height: 25px;
+  margin-right: 12px;
+  vertical-align: baseline;
+}
+.legend .one {  background-color: #e5f5f9; }
+.legend .two {  background-color: #99d8c9; }
+.legend .three { background-color: #41ae76; }
+.legend .four { background-color: #006d2c; }
+.legend .five { background-color: #00441b; }
+
+#legend {
+  display: inline-block;
+}
+#hmap {
+  display: inline-block;
+}

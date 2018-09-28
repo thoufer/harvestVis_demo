@@ -108,17 +108,27 @@
 						<h2 style="margin-bottom: -2px">waterfowl harvest by county</h2>
 							<span id="subhead-text" style="font-weight: normal;">Click on county for more information, double click or mouse scroll to zoom</span>
 						<div id="hmap-container">
-							 <div id="selector">
+							<div id="selector">
 								 <ul class="option">
 									 <li id="rank-duck" onclick="changeRank('duck')">Duck Rankings</li>
-								 <!--  <li id="reset">Reset</li> -->
 									 <li id="rank-goose" onclick="changeRank('geese')">Goose Rankings</li>
 								 </ul>
 							 </div>
-							<div id="hmap">
-							    <svg id="harvest-map" xmlns="http://www.w3.org/2000/svg" width-"960" height="550"
-									viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet"></svg>
-	  						</div>
+							<div>
+								<div id="hmap">
+								    <svg id="harvest-map" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet"></svg>
+		  					</div>
+								<div id="legend">
+									<ul class="legend" style="list-style: none;">
+										<li><span class="five"></span>high harvest</li>
+										<li><span class="four"></span></li>
+										<li><span class="three"></span></li>
+										<li><span class="two"></span></li>
+										<li><span class="one"></span>low harvest</li>
+									</ul>
+								</div>
+							</div>
 						</div><!--end hmap-container div-->
 					</div><!-- end vis 3 div -->
 
