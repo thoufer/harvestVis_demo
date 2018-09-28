@@ -32,7 +32,7 @@ function createRankMap(){
 
   map_svg.call(d3.zoom()
     .scaleExtent([1, 12])
-    .translateExtent([[0,0], [width, height]])
+    .translateExtent([[0,0], [width + 10, height + 10]])
     .on("zoom", zoomed));
 }
 
