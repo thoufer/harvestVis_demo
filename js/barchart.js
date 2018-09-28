@@ -4,7 +4,7 @@ var months = [{month:'September', week:35},
               {month:'December',  week:50},
               {month:'January',   week:55}];
 
-var width = 700, height = 650
+var width = 750, height = 550
     margin = {top: 10, right: 0, bottom: 50, left: 50};
     innerWidth = width - margin.left - margin.right,
     innerHeight = height - margin.top - margin.bottom,
