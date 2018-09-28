@@ -88,13 +88,10 @@ function draw(error, us){
 }
 
 function sizeChange() {
-    /*
-      given a change to window size recalculate svg to fit within
-      window.
-    */
+    /* given a change to window size recalculate svg to fit within window. */
     d3.select("g")
-      .attr("transform", "scale(" + $("#map").width() / 960 + ")")
-      $("svg").height($("#harvest-map").width()*0.618);
+      .attr("transform", "scale(" + $("#hmap-container").width() + ")")
+      $("svg").height($("#hmap-container").width()*0.618);
 }
 
 function clicked(d, us){
