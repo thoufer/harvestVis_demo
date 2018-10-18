@@ -1,20 +1,32 @@
 @charset "utf-8";
 /* CSS Document */
-a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
+
+/*--------------------------------
+Tooltip
+--------------------------------*/
+a#tooltip:link, a#tooltip:visited, a#tooltip:active {
 	text-decoration: none !important;
 }
+
+.toolText:hover {
+	color:#559955
+}
+
 .toolText {
 	border-bottom: 1px dotted black;
 	font-style: italic;
 	cursor: pointer;
-	color:#604c3b;
+	color:#003300;
 }
+
 .toolImg {
 	cursor: pointer;
 }
+
 .tooltip {
 	opacity: 1 !important;
 }
+
 .tooltip > .tooltip-inner {
     background-color: white; 
     color: black; 
@@ -31,33 +43,34 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:hover, a#tooltip:active {
 	font-family: 'FontAwesome';
   }
 
-
-/* add drop shadow to images*/
-.img-style {
-	border: 1px solid;
-	box-shadow: 3px 3px 3px 0px #444444;
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
 }
 
-/* Style the Image Used to Trigger the Modal */
-.myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+.tooltip.top-left .tooltip-arrow {
+    right: 5px;
+    bottom: 0;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
 }
 
-/*override horizontal rule style*/
-hr {
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom: 1px solid #727272 !important; 
-  margin: 0 !important;
+.tooltip.top-right .tooltip-arrow {
+    bottom: 0;
+    left: 5px;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
 }
 
 
-.myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
+/*--------------------------------
+Modal
+--------------------------------*/
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -133,4 +146,99 @@ hr {
     .modal-content {
         width: 100%;
     }
+}
+
+/* Style the Image Used to Trigger the Modal */
+.myImg {
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.myImg:hover {
+	opacity: 0.7;
+}
+
+/*--------------------------------
+Main CSS (body, headers, etc.)
+--------------------------------*/
+body {
+	color: #292929;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5em;
+}
+
+h1, h2{
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.25em;
+	margin: 0;
+	text-rendering: optimizeLegibility;
+}
+
+h1 {
+	font-size: 2.75em;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	font-weight: 400;
+	color: #003300;
+}
+
+h2 {
+	font-size: 1.625em;
+	text-transform: uppercase;
+	color: #292929;
+}
+
+p {
+	margin: 0 0 0.75em;
+}
+
+hr {
+	border-bottom: 1px solid #727272;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	margin: 0;
+}
+
+i {
+	color:#003300;
+}
+
+/*--------------------------------
+Images & Videos
+--------------------------------*/
+img {
+	margin: 0;
+	max-width: 100%;
+	border: 1px solid;
+	box-shadow: 3px 3px 3px 0px #444444;
+}
+
+iframe {
+	border: 1px solid;
+	box-shadow: 3px 3px 3px 0px #444444;
+}
+
+.img-left {
+	float: left;
+	width: 30%;
+	margin-right: 2em;
+}
+
+.img-right {
+	float: right;
+	width: 30%;
+	margin-left: 2em;
+	margin-right: 5px;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+
+.clear {
+	clear: both;
 }

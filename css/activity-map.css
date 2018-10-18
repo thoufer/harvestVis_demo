@@ -148,7 +148,7 @@ canvas {
 }
 
 #mapid {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 /*text css*/
@@ -156,7 +156,7 @@ canvas {
   display: block;
   margin-left: 10px;
   font-size: 16pt;
-  color: #002868;
+  color: #336633;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
 }
