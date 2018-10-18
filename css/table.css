@@ -1,0 +1,77 @@
+/* FOR RESPONSIVE TABLE ON MOBILE DEVICES -- take rows and create vertical blocks */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+/* Stack rows vertically on small screens */
+
+@media (max-width: 767px) { /* Hide column labels */ 
+
+	thead tr {
+		position: absolute;
+		top: -9999em;
+		left: -9999em;
+	}
+	/* Leave a space between table rows */
+
+	tr + tr {
+		margin-top: 1.5em;
+	}
+	/* Get table cells to act like rows */
+
+	tr, td {
+		display: block;
+	}
+	/* Leave a space for data labels */
+
+	td {
+		padding-left: 50%;
+	}
+		/* Add data labels */
+
+		td:before {
+			content: attr(data-label);
+			display: inline-block;
+			margin-left: -100%;
+			width: 100%;
+            font-weight:bold;
+		}
+}
+/* Stack labels vertically on smaller screens */
+
+@media (max-width: 767px) {
+	td {
+		padding-left: 0;
+	}
+
+		td:before {
+			display: block;
+			margin-left: 0;
+		}
+
+    .cal-table thead tr {
+        position: initial;
+        margin:3px;
+      
+    }
+    .cal-table tr, .cal-table th, .cal-table td {
+        display: flex;
+        margin:3px;
+    }
+
+    .cal-table td {
+        padding: 10px;
+        display: flex;
+    }
+
+    .cal-table td:before {
+        margin-left: 0;
+        
+    }
+   /* align center aligned cells left for nicer view on mobile */
+    .text-center {
+        text-align:left;
+    }
+  
+   
+    }
