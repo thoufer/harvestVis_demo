@@ -2,7 +2,4 @@ We have a new layout! See https://thoufer.github.io/harvestVis_demo/harvest-vis.
 
 
 
-You can still access the old layout although the style has been changed so things may not look as they should.
- https://thoufer.github.io/harvestVis_demo/index.html
-
- https://thoufer.github.io/harvestVis_demo/wings.html
+You can still access the old layout although the style has been changed so things may not look as they should. See  https://thoufer.github.io/harvestVis_demo/index.html or https://thoufer.github.io/harvestVis_demo/wings.html.
