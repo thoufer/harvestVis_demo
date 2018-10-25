@@ -1,0 +1,807 @@
+.redAsterisk
+{
+    color: #DD0000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 125%;
+}
+
+.hand-pointer {
+	 cursor: pointer;
+	 cursor: hand;
+}
+
+.no-padding {
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.pad-bottom-10 {
+	padding-bottom: 10px;
+}
+
+.pad-bottom-20 {
+  padding-bottom: 20px;
+}
+
+@media (max-width: 979px) {
+  .pad-bottom-20 {
+    padding-bottom: 15px;
+  }
+}
+
+.pad-top-10 {
+	padding-top: 10px;
+}
+
+.pad-top-20 {
+  padding-top: 20px;
+}
+
+@media (max-width: 979px) {
+  .pad-top-20 {
+    padding-top: 15px;
+  }
+}
+
+.pad-top-30 {
+  padding-top: 30px;
+}
+
+@media (max-width: 979px) {
+  .pad-top-30 {
+    padding-top: 25px;
+  }
+}
+
+.pad-top-40 {
+  padding-top: 40px;
+}
+
+@media (max-width: 979px) {
+  .pad-top-40 {
+    padding-top: 35px;
+  }
+}
+
+.pad-top-50 {
+  padding-top: 50px;
+}
+
+@media (max-width: 979px) {
+  .pad-top-50 {
+    padding-top: 45px;
+  }
+}
+
+.pad-top-60 {
+  padding-top: 60px;
+}
+
+/* brought from bootstrap*/
+
+.navbar-default {
+    /*xxxbackground-color: #f8f8f8;*/
+    border-color: #e7e7e7;
+    background-color: #003300;
+}
+
+    .navbar-default .navbar-brand {
+        color: #777;
+    }
+
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            /*xxxcolor: #5e5e5e;*/
+            color: white;
+            background-color: transparent;
+        }
+
+    .navbar-default .navbar-text {
+        /*color: #777;*/
+        color: white;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        /*color: #777;*/
+        color: white;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            /*color: #333;*/
+            color: white;
+            /*background-color: transparent;*/
+            background-color: #559955;
+        }
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        /*xxxcolor: #555;*/
+        /*background-color: #e7e7e7;*/
+        background-color: #336633;
+        color: white;
+    }
+
+    .navbar-default .navbar-nav > .disabled > a,
+    .navbar-default .navbar-nav > .disabled > a:hover,
+    .navbar-default .navbar-nav > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle {
+        /*xxxborder-color: #ddd;*/
+        /*ADDED*/
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        background-color: #003300;
+    }
+
+
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    /*xxxbackground-color: #888;
+        added from invision
+    */ /*xxxbackground-color: #888;
+        added from invision
+    */
+    background-color: #fff;
+    height: 4px;
+    font-family: FontAwesome;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #fff;
+        background-color: #336633;
+    }
+
+
+        @media (max-width: 979px) {
+            .pad-top-60 {
+                padding-top: 55px;
+            }
+        }
+
+        .dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+}
+
+.pagination {
+	margin: 0;
+}
+
+.help-block {
+	color: #725746;
+}
+/*Header css 01/16/2018*/
+.show-on-mobile {
+    display: none !important;
+}
+
+.header-top-color {
+    /*background-color: #021D44;*/
+    background-color: #003300;
+}
+
+.header-bottom-color {
+    /*background-color: #003366;*/
+    background-color: #003300;
+}
+
+.logoTop {
+    background-image: url('../img/logotop.png');
+    background-repeat: no-repeat;
+    height: 260px;
+}
+
+.logoBottom {
+   background-image: url('../img/logoBottom.png'); 
+   background-repeat: no-repeat;
+   height: 50px;
+}
+.logoSmall {
+    background-image: url('../img/fws-logo-50.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    line-height: 64px;
+   background-position-y: 10px;
+   /*  background-position-x: 10px;*/
+  
+}
+.logoPhone {
+    background-image: url('../img/fws-100.png');
+    background-repeat: no-repeat;
+    height: 60px;
+    background-position-y: 8px;
+    background-color: #003300;
+}
+.logoPhoneBottom {
+    background-image: url('../img/fws-100.png');
+    background-repeat: no-repeat;
+    height: 56px;
+    background-position-y: -52px;
+    background-color: #003300;
+}
+
+/* ipad specific */
+@media (min-width: 768px) /*and (max-width: 767px)*/ {
+    .logoPhoneBottom {
+        background-image: url('../img/fws-100.png');
+        background-repeat: no-repeat;
+        height: 50px;
+        background-position-y: -52px;
+        background-color: #003300;
+    }
+}
+
+
+    .u-s-fish-wildlife {
+        height: 25px;
+        color: #FFFFFF;
+        font-family: "Source Sans Pro";
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+.u-s-fish-wildlife-header {
+    
+    color: #000000;
+    font-family: "Source Sans Pro";
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: #ccc 4px 4px 4px;
+}
+.surveyHeader {
+    margin-left:400px;
+    padding-top: 16px;
+    font-size: 28px;
+}
+
+
+.conserving-the-natur {
+    height: 35px;
+    color: #FFFFFF;
+    font-family: Merriweather;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.conserving-the-natur-footer {
+    /*height: 35px;*/
+    color: #FFFFFF;
+    font-family: Merriweather;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #003300;
+    /*background-color: #2A7C80;*/
+    line-height: 25px;
+    padding-bottom: 20px;
+}
+
+.text-white, a.text-white {
+    color: #fff;
+}
+
+.padding-top-lg {
+    padding-top: 10px;
+    background-color: #003300;
+   }
+
+.padding-bottom-lg {
+    padding-bottom: 20px;
+    background-color: #021D44;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: block !important;
+    }
+
+    .logoTop {
+        background-image: url('../img/fws-logo-50.png');
+        background-repeat: no-repeat;
+        background-position-y: 20px;
+        background-position-x: 20px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .logoBottom {
+        background-image: url('../img/fws-logo-50.png');
+        background-position-x: 20px;
+        background-position-y: -10px;
+        background-repeat: no-repeat;
+        height: 60px;
+    }
+
+    .u-s-fish-wildlife-header {
+        color: #fff;
+        font-family: "Source Sans Pro";
+        /*font-size: 16px;*/
+        font-size: 21px;
+        font-weight: bold;
+        text-shadow: #000 2px 2px 2px;
+        padding-left: 100px;
+        padding-top:4px;
+    }
+
+    .surveyHeader {
+        margin-top: 16px;
+        font-size: 28px;
+   
+    }
+    .navbar-default-green {
+        /*xxxbackground-color: #f8f8f8;*/
+        border-color: #e7e7e7;
+        background-color: #20401b;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+        background-color: white;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+            color: #555;
+            background-color: #e7e7e7;
+        }
+
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 428px) and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .u-s-fish-wildlife {
+        color: #FFFFFF;
+        font-family: "Source Sans Pro";
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .conserving-the-natur {
+        color: #FFFFFF;
+        font-family: Merriweather;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
+
+.navbar-toggle {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    background-color: #021D44;
+    height: 1.64%;
+    width: 1.29%;
+    color: #FFFFFF;
+    font-family: FontAwesome;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+/*Form Control Additions*/
+
+.green-button, .green-button:visited, .green-bg {
+    background-color: #2A7C80;
+    color: #fff;
+}
+
+.green-image {
+    background-image: url(../img/wallpaper_prev_002.jpg);
+    background-position-y: -50px;
+   
+}
+.dk-green-txt {
+    color: #1c341a;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+    .green-button:hover , .green-button:active {
+        font-weight: bold;
+        /*text-decoration: underline;*/
+        color: #fff;
+    }
+/* change table stripe colors*/
+.table-striped-green {
+    background-color: #fff;
+}
+.table-striped-green > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+    background-color: lightgoldenrodyellow;
+}
+   
+
+/* TABLES */
+.table-th-row {
+    background-color: #979797;
+    color: #fff;
+}
+.glyph-off {
+    color: #ccc !important;
+}
+/*footer code*/
+
+#footer {
+    height: 160px;
+}
+
+.footer-background {
+    height: 160px;
+    background-color: #2A7C80;
+     bottom: 0;
+    width: 100%;
+    margin-top: 15%;
+   
+    
+}
+/* add space for buttons wrapping on mobile */
+  .margin-6 {
+     margin-bottom:6px
+ }
+
+    .footer-logo {
+    background-image: url('../img/fws-100.png');
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    height: 116px;
+    width: 120px;
+}
+
+    .label2 {
+        font-weight:normal 
+    }
+
+   /* collapse tables for mobile */
+@media only screen and (max-width: 800px) {
+    /* Force table to not be like tables anymore */
+    #issuedTable table, #applicationTable table,
+    #issuedTable thead, #applicationTable thead,
+    #issuedTable tbody, #applicationTable tbody,
+    #issuedTable th, #applicationTable th,
+    #issuedTable td, #applicationTable td,
+    #issuedTable tr #applicationTable tr {
+        display: block;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+  #issuedTable thead tr,  #applicationTable thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    #issuedTable tr, #applicationTable tr {
+        border: 1px solid #ccc;
+    }
+
+    #issuedTable td, #applicationTable td {
+        /* Behave like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 30%;
+        white-space: normal;
+        text-align: left;
+        height: 64px;
+    }
+
+    #issuedTable td:before, #applicationTable td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+        /*
+        Label the data
+        */
+    #issuedTable td:before, #applicationTable td:before {
+        content: attr(data-title);
+    }
+}
+/* xxx multi-select box css*/
+
+span.multiselect-native-select {
+    position: relative
+}
+
+    span.multiselect-native-select select {
+        border: 0 !important;
+        clip: rect(0 0 0 0) !important;
+        height: 1px !important;
+        margin: -1px -1px -1px -3px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        width: 1px !important;
+        left: 50%;
+        top: 30px
+    }
+
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+    .multiselect-container .input-group {
+        margin: 5px
+    }
+
+    .multiselect-container > li {
+        padding: 0;
+        /* xxx add better sized box*/
+        padding-right: 40px
+    }
+
+        .multiselect-container > li > a.multiselect-all label {
+            font-weight: 700
+        }
+
+        .multiselect-container > li.multiselect-group label {
+            margin: 0;
+            padding: 3px 20px 3px 20px;
+            height: 100%;
+            font-weight: 700
+        }
+
+        .multiselect-container > li.multiselect-group-clickable label {
+            cursor: pointer
+        }
+
+        .multiselect-container > li > a {
+            padding: 0
+        }
+
+            .multiselect-container > li > a > label {
+                margin: 0;
+                height: 100%;
+                cursor: pointer;
+                font-weight: 400;
+                padding: 3px 0 3px 30px
+            }
+
+                .multiselect-container > li > a > label.radio, .multiselect-container > li > a > label.checkbox {
+                    margin: 0
+                }
+
+                .multiselect-container > li > a > label > input[type=checkbox] {
+                    margin-bottom: 5px
+                }
+
+.btn-group > .btn-group:nth-child(2) > .multiselect.btn {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+}
+
+.form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
+    padding: 3px 20px 3px 40px
+}
+
+.form-inline .multiselect-container li a label.checkbox input[type=checkbox], .form-inline .multiselect-container li a label.radio input[type=radio] {
+    margin-left: -20px;
+    margin-right: 0
+}
+/*center input input table*/
+.center-td-input {
+    text-align:center;
+}
+.permit-info-border {
+    border: 1px solid tan;
+    border-radius: 3px;
+    padding: 10px;
+    overflow: hidden;
+}
+.margin-left-30 {
+    margin-left:30px !important;
+}
+/*modal h4 column table*/
+.modal-table-col1{
+    width:15%;
+   
+}
+.modal-table-col2 {
+    width: 25%;
+   
+}
+.modal-table-col3 {
+    width: 30%;
+  
+}
+.modal-table-col4 {
+    width: 20%;
+   
+}
+/* close up the space on the <ol> collapse panels*/
+#accordion li.panel {
+    margin:0;
+   }
+/* add padding to glyphs for actions panel */
+
+.glyph-padding-4 {
+   padding-right:4px;
+   padding-left:4px;
+   border: 1px solid #cccccc;
+}
+.glyphicon-small {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    /*xxxcolor: #021D44;*/
+    color: #336699;
+    /*xxxadd font size*/
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.line-total-bgcolor {
+    font-weight:bold;
+    background-color: lightgoldenrodyellow ;
+}
+.input-mini-70 {
+    width:70px;
+}
+.input-mini-200 {
+    width: 200px;
+}
+/* reverse the glyph direction -- used for withdraw permit  - 04-25-2018*/
+ .glyph-flipped {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+.carBg {
+   background-color: #e4f7d7;
+}
+.red-text {
+    color:red;
+    font-size:16px;
+}
+/* hunt log edit button style */
+ .smText {
+    font-size:12px;
+    font-weight:bold;
+    color:#003366;
+    height:20px;
+}
+ .glyph-row-align {
+     top:6px;
+ }
+
+/* set footer to bottom of screen*/
+/*html {
+    height: 100%;
+}*/
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.reportButton {
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    padding: 10px;
+    width: 20%;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    background-color: sienna;
+    height: auto;
+    display: table;
+    margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+    .reportButton {
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 8px 8px 8px 8px;
+        -webkit-border-radius: 8px 8px 8px 8px;
+        padding: 5px;
+        width: 46%;
+        color: white;
+        font-weight: bold;
+        background-color: sienna;
+        height: auto;
+        display: table;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+.card {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 4px 4px 3px #666666;
+    -moz-box-shadow: 4px 4px 3px #666666;
+    box-shadow: 4px 4px 3px #666666;
+    font-family: Arial;
+    color: #fff;
+    font-size: 14px;
+    background: #003300;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+}
+

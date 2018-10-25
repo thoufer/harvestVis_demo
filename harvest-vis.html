@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Duck Wing Identification</title>
+    <title>Harvest Survey Maps</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!--template links-->
+    <!-- added links -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+  	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<!--template links-->
 	<script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -14,7 +17,11 @@
     <link rel="stylesheet" href="css/table.css" />
 	<!-- added links -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/activity-map.css">
 	<link rel="stylesheet" href="css/tooltip.css" />
+
+	<script src="js/HarvData.json"></script>
+	<script src="js/StateKey.json"></script>
 </head>
 <body>
     <!--  Top Menu-->
@@ -30,8 +37,8 @@
                         <ul class="nav navbar-nav">
                             <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li><a href="harvest-vis.html">MAPS &amp; DATA<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="wing-id.html">WING ID</a></li>
+							<li class="active"><a href="harvest-vis.html">MAPS &amp; DATA</a></li>
+							<li><a href="wing-id.html">WING ID<span class="sr-only">(current)</span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -81,8 +88,8 @@
                         <ul class="nav navbar-nav">
                             <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li><a href="harvest-vis.html">MAPS &amp; DATA<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="wing-id.html">WING ID</a></li>
+							<li class="active"><a href="harvest-vis.html">MAPS &amp; DATA</a></li>
+							<li><a href="wing-id.html">WING ID<span class="sr-only">(current)</span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -114,71 +121,77 @@
             
 			<!-- begin harvest data and map content -->
 			<div><!--style="width: 80%;"-->
-			<h1>How do we identify species from their wings?</h1><br>
-                
-			<div class="overflow-hidden" >
-				<p>The <strong>Waterfowl Diary Survey</strong> only asks about harvest of ducks, geese, sea ducks, and brant.
-				<a href="#!" id="tooltip" data-toggle="tooltip" title="Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have &#39;colored up&#39; into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey."><span class="toolText">Why?</span> 
-				<i class="fa fa-info-circle"></i></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. The US Fish & Wildlife Service has created a series of videos on duck identification using wing feathers. The following video is the first in the series, and shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings.</p>
+				<h1>What do we learn from harvest surveys?</h1><br>
 
-				<p class="img-right"><img class="myImg img-rounded" src="img/FeatherGroups.jpg" alt="duck wing feather groupings" title="duck wing feather groupings" /></p>
+				<div class="overflow-hidden" >
+					<p>Hunters provide information that helps set annual hunting regulations, ensuring both the best possible opportunities for hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#!" id="tooltip" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No! </span><i class="fa fa-info-circle"></i></a>. The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.</p>
+				</div>
 
-				<p>But first, click on the image to the right to learn the different feather groupings of a wing that are key to identifying duck species! This graphic is helpful when distinguishing between species as shown in the various videos on this page. See further down on this page for other videos in the series about duck species identification using wings.</p>
-			</div>
-				
-			<p></p>
+			<div class="overflow-hidden"><!--visualization #1-->
+				<h2 style="margin-bottom: -2px">State waterfowl Hunting by the numbers (10-year average)</h2>
+				<span id="subhead-text" style="font-weight: normal;">Select a state on the map</span>
+				<div id="container">
+					<div id="map-container">
+						<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin meet"></svg>
+					</div>
+					<div id="data-panel" style="width: 250px;"></div>
+				</div>
+
+				<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#!" id="tooltip" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!"><span class="toolText">how do we know the number of waterfowl hunters in a state?</span>
+				<i class="fa fa-info-circle"></i></a>).</p>
+
+				<p>Diary Survey participants tell us the days they hunted and how many birds they harvested each day. This information allows state wildlife agencies to choose the hunting dates that will provide the best hunting, because a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.</p>
+			</div><!--end vis #1-->
+
+			<div class="overflow-hidden"><!--visualization #2-->
+				<h2 style='margin-bottom: -2px'>Weekly harvest by region (10-year average)</h2>
+				<span id="subhead-text" style="font-weight: normal;">Select a region on the map</span>
+				<div id="mapid" style="">
+					<svg id="barchart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+				viewBox="0 0 750 550" preserveAspectRatio="xMaxYMax meet"></svg>
+				</div>
+			</div> <!--end vis #2-->
+
+			<div class="overflow-hidden"><!--visualization #3-->
+				<p>Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the Harvest Survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.</p>
+
+				<p>The Harvest Survey covers 3,115 counties/census units in the Contiguous U.S. Over the past 10 years, the survey has recorded duck harvest in 86% of these units, and goose harvest in 69%. Units with no harvest reported may see harvest at rates too low to be recorded by the survey.</p>
+
+				<h2 style="margin-bottom: -2px">waterfowl harvest by county</h2>
+				<span id="subhead-text" style="font-weight: normal; margin-bottom: 10px;">Click on a county for more information, double click or mouse scroll to zoom</span>
+				<div id="hmap-container">
+					<div id="selector">
+						<ul class="option">
+							<li id="rank-duck" onclick="changeRank('duck')">Duck Rankings</li>
+							<li id="rank-goose" onclick="changeRank('geese')">Goose Rankings</li>
+						</ul>
+					</div>
+					<div>
+						<div id="hmap">
+							<svg id="harvest-map" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet"></svg>
+						</div>
+						<div id="legend">
+							<ul class="legend" style="list-style: none;">
+								<li><span class="five"></span>high harvest</li>
+								<li><span class="four"></span></li>
+								<li><span class="three"></span></li>
+								<li><span class="two"></span></li>
+								<li><span class="one"></span>low harvest</li>
+							</ul>
+						</div>
+					</div>
+				</div><!--end hmap-container div-->
+			</div><!-- end vis 3 div -->
+
 			<div class="overflow-hidden">
-				<p align="center"><iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-			</div>
-
-			<p></p>
-			<div class="overflow-hidden">
-				<p class="img-left"><img class="img-rounded" src="img/envelope.fw.png" title="pcs envelope form" alt="pcs envelope form" /></p>
-				<p class="img-right"><img class="img-rounded" src="img/wingbee.fw.png" alt="envelopes" title="envelopes" /></p>
-
-				<p>The <strong>Waterfowl Parts Collection Survey</strong> randomly selects 5-6,000 waterfowl hunters to send us a wing from every duck, and tail feathers from every goose, they shoot during the hunting season. This survey tells us the species composition of each state's duck and goose harvests. The image to the left shows the  postage-paid envelope the selected waterfowl hunters send us for every individual bird they shoot during the hunting season. Once we receive the envelopes, biologists and volunteers gather together and sort through the wings and feathers to identify the species. The image above and to the right shows a stack of received envelopes and a duck wing ready for identification.</p>
-			</div>
+				<p>Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.</p>
 				
-			<p></p>
-			<div class="overflow-hidden">
-				<p><a href="#!" id="tooltip" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Diary Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000)."><span class="toolText">We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.</span> <i class="fa fa-info-circle"></i></a> We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with <strong>Parts Collection Surveys</strong>.</p>
-			
-				<p class="img-right"><img class="myImg" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" /></p>
+				<p class="img-right"><img class="img-rounded" src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings"/></p>
 
-				<p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar.</p>
-
-				<p>What is the duck on the right? Click the binoculars to find out the answer! <a href="#!" id="tooltip" data-toggle="tooltip" title="A female blue-winged teal!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a></p>
-				
-				<p class="img-left"><img class="myImg" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" /></p>
-				
-				
-				<p>What about the one on the left? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female gadwall!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> Do you have to worry about the next bird you shoot if you have already bagged one of these? The next video in the series shows you how to identify several "brown ducks" of different species by their wings. Remember to use the the wing feather groupings image above to help with species identification.</p>
-			</div>
-
-			<p></p>
-			<div class="overflow-hidden">
-				<p align="center"><iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/TPC72Oguurs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-			</div>
-
-			<p></p>
-			<div class="overflow-hidden">
-				<p class="img-left"><img class="myImg" src="img/femredh.jpg" alt="female redhead" title="female redhead" /></p>
-				<p>The duck to the left is another female; do you know what species? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female redhead!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> To differentiate between similarly colored redheads and canvasbacks, we use not only the wing, but also the shape of the head and bill.</p> 
-			
-				<p></p>
-				<p class="img-right"><img class="myImg" src="img/femgrsc.jpg" alt="female greater scaup" title="female greater scaup" /></p>
-
-				<p>The bird on the right is a female scaup, but can you tell which of the two species (greater or lesser) is pictured? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female greater scaup!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> Scaup species can be difficult to identify, particularly with nothing to compare against. But by looking at the color of the primary wing feathers, we can determine the correct Scaup species.</p>
-				
-				<p>Here is another video demonstrating how to distinguish between several diving duck species (including scaup, ring-necked duck, redhead, and canvasback) using wings and wing feathers. Don't forget to use the wing feather groupings image at the top of this page for reference.</p>
-			</div>
-
-			<p></p>
-			<div class="overflow-hidden">
-				<p align="center"><iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/aWE_bHEoXGc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-
-				<p><br></p>
-				<p><a href="harvest-vis.html" style="font-weight: bold;">Click here to see maps showing waterfowl harvest in through the U.S.</a></p>
+				<p>Did you know ducks can be identified using just a wing?
+				<a href="#!" id="tooltip" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits."><span class="toolText">Yes, it's true!</span> <i class="fa fa-info-circle"></i></a>
+				<a href="wing-id.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
 			</div>
 
 			<!--footer information, moved inside of main content area div so it aligns with the rest of the page-->
@@ -186,16 +199,6 @@
 				<p style="margin-top: 0.5%; font-size: 10pt;">This content was developed through a collaboration between staff from the USFWS Migratory Bird Program and USGS Patuxent Wildlife Research Center. The project was kicked off at an internal 2017 National Civic Day of Hacking event held at PWRC. Participants included Tony Bethea, Theo Burton, Tony Celis-Murillo, Chris Deets, Rob Fowler, Pam Garrettson, Kayt Jonsson, Jenn Malpass, Derek Masaki, Paul Padding, Bob Raftovich, Becky Rau, Emily Silverman, Alli Sussman, Khristi Wilkins, and Nathan Zimpfer.</p>
 				<span>Last Updated: October 18, 2018.</span>
 			</div>
-				
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
-				<!-- The Close Button -->
-					<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-				<!-- Modal Content (The Image) -->
-					<img class="modal-content" id="img01">
-				<!-- Modal Caption (Image Text) -->
-					<div id="caption"></div>
-				</div>
 			</div>
 			<!-- end harvest data and map content -->
 			
@@ -242,5 +245,8 @@
     </div>
 </body>
 <script src="js/jquery.ui.widget.js"></script>
+<script src="js/activity-map.js" type="text/javascript"></script>
+<script src="js/barchart.js" type="text/javascript"></script>
+<script src="js/rank-map.js" type="text/javascript"></script>
 <script src="js/tooltip.js" type="text/javascript"></script>
 </html>
