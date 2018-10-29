@@ -175,5 +175,5 @@ function changeRank(value){
     });
 };
 
-d3.select(window).on("resize", sizeChange);
 createRankMap();
+window.addEventListener("resize", sizeChangeRank);
