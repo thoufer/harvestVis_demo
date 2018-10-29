@@ -15,6 +15,7 @@ var div = d3.select("body").append("div")
     .attr("class", "ttip")
     .style("opacity", 0);
 
+var active = d3.select(null);
 var rankings = d3.map();
 var rankValue = 'duck';
 var path = d3.geoPath();
@@ -23,8 +24,8 @@ var zoomLayer = map_svg.append("g")
   .attr("class", "counties");
 
 function createRankMap(){
-  var width = 960, height = 550
-      active = d3.select(null);
+  var width = 960,
+      height = 550;
 
   var zoomed = function() {
     reset();
