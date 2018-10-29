@@ -44,8 +44,17 @@
   width: 550px;
 }
 
-#activity-map {
-  float: left;
+div#activity-map {
+  display: block;
+}
+
+div#data-panel {
+  display: block;
+  margin-left: 0px;
+  font-size: 15pt;
+  color: #002868;
+  white-space: nowrap;
+  width: min-content;
 }
 
 #activity-map text {
@@ -64,15 +73,6 @@ div#tx-indent {
 }
 
 
-div#data-panel {
-  display: block;
-  margin-left: 0px;
-  font-size: 15pt;
-  color: #002868;
-  font-family: "Arial Narrow", Arial, sans-serif;
-  white-space: nowrap;
-  width: min-content;
-}
 
 /* barchart css*/
 .bar {
