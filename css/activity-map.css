@@ -63,17 +63,6 @@ div#tx-indent {
   white-space: pre-wrap
 }
 
-div#map-text {
-  position: absolute;
-  margin-left: 80px;
-  z-index: 2;
-  font-size: 12px;
-  line-height: 18px;
-}
-
-div#map-text div {
-  display: inline-block;
-}
 
 div#data-panel {
   display: block;
