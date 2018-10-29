@@ -5,7 +5,7 @@ var months = [{month:'September', week:35},
               {month:'January',   week:55}];
 
 var width = 750, height = 550
-    margin = {top: 20, right: 0, bottom: 50, left: 50};
+    margin = {top: 40, right: 50, bottom: 50, left: 50};
     innerWidth = width - margin.left - margin.right,
     innerHeight = height - margin.top - margin.bottom,
 	xScale = d3.scaleBand()
@@ -25,7 +25,7 @@ var svg = d3.select("#barchart")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("js/us-states.json", function (error, us){
-  var projection = d3.geoAlbersUsa().scale(400).translate([550,75]);
+  var projection = d3.geoAlbersUsa().scale(400).translate([560,40]);
   var path = d3.geoPath().projection(projection);
 
   var mgmt_map = svg.append("g")
