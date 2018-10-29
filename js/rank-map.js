@@ -89,10 +89,10 @@ function draw(error, us){
     .attr("d", path)
 }
 
-function sizeChange() {
+function sizeChangeRank() {
     /* given a change to window size recalculate svg to fit within window. */
     d3.select("g")
-      .attr("transform", "scale(" + $("#hmap-container").width() + ")")
+      .attr("transform", "scale(" + $("#hmap-container").width() / 960 + ")")
       $("svg").height($("#hmap-container").width()*0.618);
 }
 
