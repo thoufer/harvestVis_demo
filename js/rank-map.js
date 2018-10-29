@@ -27,7 +27,6 @@ function createRankMap(){
   var width = 960,
       height = 550;
 
-
   sizeChangeRank();
 
   var zoomed = function() {
