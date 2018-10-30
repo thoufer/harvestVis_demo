@@ -6,8 +6,7 @@ function drawMap() {
   var path = d3.geoPath().projection(projection);
   var selected = d3.select(null);
 
-  resize();
-  d3.select(window).on("resize", resize);
+  resize_activity();
 
   // Add text labels
   var textLabels = svg.append("g")
@@ -136,13 +135,15 @@ function drawMap() {
          .attr("stroke", '#666666')
          .attr("stroke-width", "3px");
    };
-
-function resize() {
-     width = $('#map-container').width(), height = $('#map-container').height();
-     svg.attr("width", width).attr("height", height)
-     svg.size([width, height]);
-   };
 }
+
+function resize_activity() {
+  d3.select("g.textLabels").attr("transform", "scale(" + $("#map-container").width() / 960 + ")")
+  d3.select("g.states").attr("transform", "scale(" + $("#map-container").width() / 960 + ")")
+  d3.select("g.flyway").attr("transform", "scale(" + $("#map-container").width() / 960 + ")")
+  $("#activity-map").height($("#map-container").width()*0.618);
+};
+
 
 function ordinal_suffix_of(i) {
     var j = i % 10,
@@ -158,4 +159,6 @@ function ordinal_suffix_of(i) {
     }
     return i + "<sup>th</sup>";
 }
+
+window.addEventListener("resize", resize_activity);
 drawMap();
