@@ -73,7 +73,8 @@ function drawMap() {
   function ready(error, us, FlywayBoundaryLine) {
      if (error) throw error;
 
-     svg.append("g")
+     var states = svg.append("g");
+     states
          .attr("class", "states")
          .attr("transform", "translate(0, 50)")
        .selectAll("path")
@@ -118,11 +119,10 @@ function drawMap() {
             selected = d3.select(this).classed("selected", true);
           });
 
-
-     svg.append("path")
-         .attr("class", "state-borders")
-         .attr("transform", "translate(0, 50)")
-         .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
+     states
+        .append("path")
+        .attr("class", "state-borders")
+        .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 
      svg.append("g")
        .attr("class", "flyway")
