@@ -1,6 +1,7 @@
 h3 {
   margin-bottom: -2px;
 }
+
 .states {
   fill: #66c2a4; /*A9BDAD*/
   cursor: pointer;
@@ -35,9 +36,10 @@ div#container {
 }
 
 div#map-container{
-  /*position: relative;*/
+  width: 80%;
+  /*position: relative;
   height: 350px;
-  width: 550px;
+  width: 550px;*/
 }
 
 div#activity-map {
@@ -262,6 +264,7 @@ div.ttip {
   margin-right: 12px;
   vertical-align: baseline;
 }
+
 .legend .one {  background-color: #e5f5f9; }
 .legend .two {  background-color: #99d8c9; }
 .legend .three { background-color: #41ae76; }
@@ -271,10 +274,8 @@ div.ttip {
 #legend {
   display: inline-block;
 }
-#hmap {
-  display: inline-block;
-}
 
+/*
 #hmap-container ul li{
   margin: 0;
-}
+}*/
