@@ -28,8 +28,8 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:active {
 }
 
 .tooltip > .tooltip-inner {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
 	font-weight: normal;
 	font-size: 120%;
 	font-style: normal;
@@ -162,45 +162,6 @@ Modal
 /*--------------------------------
 Main CSS (body, headers, etc.)
 --------------------------------*/
-body {
-	color: #292929;
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 1.5em;
-	-webkit-font-smoothing: antialiased;
-	line-height: 1.5em;
-}
-
-h1, h2{
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 1.25em;
-	margin: 0;
-	text-rendering: optimizeLegibility;
-}
-
-h1 {
-	font-size: 2.75em;
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-	font-weight: 400;
-	color: #003300;
-}
-
-h2 {
-	font-size: 1.625em;
-	text-transform: uppercase;
-	color: #292929;
-}
-
-p {
-	margin: 0 0 0.75em;
-}
-
-hr {
-	border-bottom: 1px solid #727272;
-	border-left: none;
-	border-right: none;
-	border-top: none;
-	margin: 0;
-}
 
 i {
 	color:#003300;

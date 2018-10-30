@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-	  <script src="https://d3js.org/d3.v4.min.js"></script>
-  	<script src="https://d3js.org/topojson.v2.min.js"></script>
 	  <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+   	<script src="https://d3js.org/topojson.v2.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/table.css" />
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/activity-map.css">
+	  <link rel="stylesheet" href="css/activity-map.css" />
 	  <link rel="stylesheet" href="css/tooltip.css" />
 
 	  <script src="js/HarvData.json"></script>
@@ -118,33 +118,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom-10">
 
 			<!-- begin harvest data and map content -->
-			<div><!--style="width: 80%;"-->
-				<h1>What do we learn from harvest surveys?</h1><br>
+			<div>
+				<h4><strong>What do we learn from harvest surveys?</strong></h4><br>
 
-				<div>
 					<p>Hunters provide information that helps set annual hunting regulations, ensuring both the best possible opportunities for hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#!" id="tooltip" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No! </span><i class="fa fa-info-circle"></i></a>. The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.</p>
-				</div>
 
-			<div><!--visualization #1-->
-				<h2 style="margin-bottom: -2px">State waterfowl Hunting by the numbers (10-year average)</h2>
-				<span id="subhead-text" class="pad-bottom-20">Select a state on the map</span>
+          <!--visualization #1-->
+			    <div>
+				      <h2 style="margin-bottom: -2px">State waterfowl Hunting by the numbers (10-year average)</h2>
+				      <span id="subhead-text" class="pad-bottom-20">Select a state on the map</span>
 				<div id="container">
-					<div id="map-container">
+				<!--	<div id="map-container">
 						<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin meet"></svg>
 					</div>
-					<div id="data-panel" style="width: 250px;"></div>
+					<div id="data-panel" style="width: 250px;"></div> -->
 				</div>
 
-				<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#!" id="tooltip" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!"><span class="toolText">how do we know the number of waterfowl hunters in a state?</span>
-				<i class="fa fa-info-circle"></i></a>).</p>
+				<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#!" id="tooltip" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!"><span class="toolText">how do we know the number of waterfowl hunters in a state?</span><i class="fa fa-info-circle"></i></a>).</p>
 
 				<p>Diary Survey participants tell us the days they hunted and how many birds they harvested each day. This information allows state wildlife agencies to choose the hunting dates that will provide the best hunting, because a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.</p>
-			</div><!--end vis #1-->
+			<!--end vis #1-->
 
-			<div><!--visualization #2-->
+			<!--<div><!--visualization #2->
 				<h2 style='margin-bottom: -2px'>Weekly harvest by region (10-year average)</h2>
 				<span id="subhead-text" class="pad-bottom-20">Select a region on the map</span>
-				<div id="mapid" style="">
+				<div id="barchart-container" style="">
 					<svg id="barchart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 				viewBox="0 0 750 550" preserveAspectRatio="xMaxYMax meet"></svg>
 				</div>
@@ -157,7 +155,7 @@
 
 				<h2 style="margin-bottom: -2px">waterfowl harvest by county</h2>
 				<span id="subhead-text" class="pad-bottom-20">Click on a county for more information, double click or mouse scroll to zoom</span>
-				<div id="hmap-container">
+				<!--<div id="hmap-container">
 					<div id="selector">
 						<ul class="option">
 							<li id="rank-duck" onclick="changeRank('duck')">Duck Rankings</li>
