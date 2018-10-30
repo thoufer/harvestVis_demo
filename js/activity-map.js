@@ -10,7 +10,8 @@ function drawMap() {
   d3.select(window).on("resize", resize);
 
   // Add text labels
-  var textLabels = svg.append("g");
+  var textLabels = svg.append("g")
+    .attr("class", "textLabels");
 
   textLabels.append("text")
     .attr("x", 165)
