@@ -6,50 +6,50 @@ function drawMap() {
   var path = d3.geoPath().projection(projection);
   var selected = d3.select(null);
 
-  resize();
-  d3.select(window).on("resize", resize);
+  resize_activity();
 
   // Add text labels
-  var textLabels = svg.append("g");
+  var textLabels = svg.append("g")
+    .attr("class", "textLabels");
 
   textLabels.append("text")
-    .attr("x", 165)
+    .attr("x", 100)
     .attr("y", 15)
     .text("Pacific Flyway");
 
   textLabels.append("text")
-    .attr("x", 185)
-    .attr("y", 50)
+    .attr("x", 115)
+    .attr("y", 35)
     .text("107 Days");
 
   textLabels.append("text")
-    .attr("x", 330)
+    .attr("x", 250)
     .attr("y", 15)
     .text("Central Flyway");
 
   textLabels.append("text")
-      .attr("x", 350)
-      .attr("y", 50)
+      .attr("x", 275)
+      .attr("y", 35)
       .text("74 Days");
 
   textLabels.append("text")
-    .attr("x", 500)
+    .attr("x", 390)
     .attr("y", 15)
     .text("Mississippi Flyway");
 
   textLabels.append("text")
-    .attr("x", 540)
-    .attr("y", 50)
+    .attr("x", 425)
+    .attr("y", 35)
     .text("60 Days");
 
   textLabels.append("text")
-    .attr("x", 700)
+    .attr("x", 575)
     .attr("y", 15)
     .text("Atlantic Flyway");
 
   textLabels.append("text")
-    .attr("x", 720)
-    .attr("y", 50)
+    .attr("x", 600)
+    .attr("y", 35)
     .text("60 Days");
 
   d3.queue()
@@ -73,9 +73,10 @@ function drawMap() {
   function ready(error, us, FlywayBoundaryLine) {
      if (error) throw error;
 
-     svg.append("g")
+     var states = svg.append("g");
+     states
          .attr("class", "states")
-         .attr("transform", "translate(0, 50)")
+         .attr("transform", "translate(-50, 50)")
        .selectAll("path")
        .data(topojson.feature(us, us.objects.states).features)
        .enter().append("path")
@@ -102,7 +103,7 @@ function drawMap() {
                                             Number(data.duck_bag) + ' ducks in ' + Number(data.duck_days) + ' days afield<br>' +
                                             Number(data.goose_bag) + ' geese in ' + Number(data.goose_days) + ' days afield </div>\n';
 
-              textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal;font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">Top harvested ducks</div>\n';
+              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">Top harvested ducks</div>\n';
               textblock.innerHTML += '<div id="tx-indent">' +  data.species.replace(/;/g, "<br>") + '</div>';
             }
 
@@ -118,15 +119,14 @@ function drawMap() {
             selected = d3.select(this).classed("selected", true);
           });
 
-
-     svg.append("path")
-         .attr("class", "state-borders")
-         .attr("transform", "translate(0, 50)")
-         .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
+     states
+        .append("path")
+        .attr("class", "state-borders")
+        .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 
      svg.append("g")
        .attr("class", "flyway")
-       .attr("transform", "translate(0, 50)")
+       .attr("transform", "translate(-50, 50)")
        .selectAll("path")
        .data(FlywayBoundaryLine.features)
        .enter().append("path")
@@ -135,13 +135,15 @@ function drawMap() {
          .attr("stroke", '#666666')
          .attr("stroke-width", "3px");
    };
-
-function resize() {
-     width = $('#map-container').width(), height = $('#map-container').height();
-     svg.attr("width", width).attr("height", height)
-     svg.size([width, height]);
-   };
 }
+
+function resize_activity() {
+  d3.select("g.textLabels").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
+  d3.select("g.states").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
+  d3.select("g.flyway").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
+  $("#activity-map").height($("#map-container").width()*0.572);
+};
+
 
 function ordinal_suffix_of(i) {
     var j = i % 10,
@@ -157,4 +159,6 @@ function ordinal_suffix_of(i) {
     }
     return i + "<sup>th</sup>";
 }
+
+window.addEventListener("resize", resize_activity);
 drawMap();

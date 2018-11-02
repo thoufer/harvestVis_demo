@@ -94,9 +94,8 @@ function draw(error, us){
 
 function sizeChangeRank() {
     /* given a change to window size recalculate svg to fit within window. */
-    d3.select("g")
-      .attr("transform", "scale(" + $("#hmap-container").width() / 960 + ")")
-      $("svg").height($("#hmap-container").width()*0.618);
+    d3.select("g").attr("transform", "scale(" + $("#rank-map-container").width() / 960 + ")")
+    $("#harvest-map").height($("#rank-map-container").width()*0.618);
 }
 
 function clicked(d, us){
@@ -178,5 +177,5 @@ function changeRank(value){
     });
 };
 
-createRankMap();
 window.addEventListener("resize", sizeChangeRank);
+createRankMap();

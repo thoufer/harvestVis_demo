@@ -1,8 +1,5 @@
-#content-area {
-  display: block;
-  float: left;
-  padding: 0;
-  background: none;
+h3 {
+  margin-bottom: -2px;
 }
 
 .states {
@@ -32,40 +29,34 @@
   font-weight: bold;
 }
 
-div#container {
+/*div#container {
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
-}
-
-div#map-container{
-  /*position: relative;
-  height: 350px;
-  width: 550px;
-}
+}*/
 
 div#activity-map {
   display: block;
 }
 
+
 div#data-panel {
   display: block;
   margin-left: 0px;
-  font-size: 15pt;
+/*  font-size: 12pt;*/
   color: #002868;
   white-space: nowrap;
   width: min-content;
 }
 
 #activity-map text {
-  font-size: 16pt;
+  font-size: 12pt;
 }
 
 div#tx-indent {
   margin-left: 16px;
   margin-bottom: 15px;
-  font-size: 14pt;
-  position: relative;
+/*  position: relative;*/
   width: 100%;
   height: auto;
   word-wrap: break-word;
@@ -84,9 +75,9 @@ div#tx-indent {
   stroke: #000;
 }
 
-svg text {
-  font-size: 16px;
-}
+/*svg text {
+  font-size: 12px;
+}*/
 
 .btn .btn-primary {
   margin-right: 20px;
@@ -124,34 +115,22 @@ svg text {
   stroke-linecap: round;
 }
 
-canvas {
-  display: block;
-  width: 100%;
-  visibility: hidden;
-}
 
 .exempt {
   fill: 'grey';
 }
 
-#mapid {
-  padding-top: 0px;
-}
 
 /*text css*/
 #subhead-text {
   display: block;
-  margin-left: 10px;
-  font-size: 16pt;
   color: #336633;
 }
 
 
 /* Ranking map css */
 div#rank-map {
-  margin:5%;
   padding:20px;
-  width: 960px;
   position: relative;
 }
 
@@ -192,14 +171,14 @@ div#rank-map {
   text-align: center;
   text-decoration: none;
   list-style: none;
+  padding: 0;
 }
 
 #selector ul.option li {
   color: #545454;
   background-color: #EBEBEB;
-  padding: 10px;
-  border-right: 2px solid #919191;
-  margin: 0;
+  padding: 5px;
+  border-right: 2px solid #919191
 }
 
 #selector ul.option li:first-child {
@@ -216,7 +195,6 @@ div#rank-map {
 #selector ul.option li:hover {
   color: #545454;
   background-color: #EBEBEB;
-  padding: 10px;
   cursor: pointer;
 }
 
@@ -225,11 +203,11 @@ div#rank-map {
   color: #EBEBEB;
 }
 
-.navButtons {
+/*.navButtons {
   height: 90px;
   position: absolute;
   top: 5%;
-}
+}*/
 
 .zoom {
   background-color: gray;
@@ -251,31 +229,31 @@ div#rank-map {
 div.ttip {
     position: absolute;
     text-align: center;
-    width: 200px;
     padding: 2px 5px;
-    font: 12px sans-serif;
     background: white;
     border: 1px solid #000;
     border-radius: 8px;
     pointer-events: none;
+    line-height: 1.0;
 }
 
 .legend {
-  font-size: 12pt;
+  list-style-type: none;
+  justify-content: center;
+  display: flex;
 }
 
 .legend li {
-  display: block;
-  height: 25px;
+  float: left
+
 }
 
 .legend span {
-  float: left;
-  width: 20px;
+  display: block;
+  width: 30px;
   height: 25px;
-  margin-right: 12px;
-  vertical-align: baseline;
 }
+
 .legend .one {  background-color: #e5f5f9; }
 .legend .two {  background-color: #99d8c9; }
 .legend .three { background-color: #41ae76; }
@@ -285,10 +263,8 @@ div.ttip {
 #legend {
   display: inline-block;
 }
-#hmap {
-  display: inline-block;
-}
 
+/*
 #hmap-container ul li{
   margin: 0;
-}
+}*/
