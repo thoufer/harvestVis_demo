@@ -226,13 +226,13 @@
 }
 
 .logoTop {
-    background-image: url('../img/logotop.png');
+    background-image: url('../img/logoTop.png');
     background-repeat: no-repeat;
     height: 260px;
 }
 
 .logoBottom {
-   background-image: url('../img/logoBottom.png'); 
+   background-image: url('../img/logoBottom.png');
    background-repeat: no-repeat;
    height: 50px;
 }
@@ -243,7 +243,7 @@
     line-height: 64px;
    background-position-y: 10px;
    /*  background-position-x: 10px;*/
-  
+
 }
 .logoPhone {
     background-image: url('../img/fws-100.png');
@@ -281,7 +281,7 @@
     }
 
 .u-s-fish-wildlife-header {
-    
+
     color: #000000;
     font-family: "Source Sans Pro";
     font-size: 24px;
@@ -372,7 +372,7 @@
     .surveyHeader {
         margin-top: 16px;
         font-size: 28px;
-   
+
     }
     .navbar-default-green {
         /*xxxbackground-color: #f8f8f8;*/
@@ -449,7 +449,7 @@
 .green-image {
     background-image: url(../img/wallpaper_prev_002.jpg);
     background-position-y: -50px;
-   
+
 }
 .dk-green-txt {
     color: #1c341a;
@@ -469,7 +469,7 @@
 .table-striped-green > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
     background-color: lightgoldenrodyellow;
 }
-   
+
 
 /* TABLES */
 .table-th-row {
@@ -491,8 +491,8 @@
      bottom: 0;
     width: 100%;
     margin-top: 15%;
-   
-    
+
+
 }
 /* add space for buttons wrapping on mobile */
   .margin-6 {
@@ -508,7 +508,7 @@
 }
 
     .label2 {
-        font-weight:normal 
+        font-weight:normal
     }
 
    /* collapse tables for mobile */
@@ -665,19 +665,19 @@ span.multiselect-native-select {
 /*modal h4 column table*/
 .modal-table-col1{
     width:15%;
-   
+
 }
 .modal-table-col2 {
     width: 25%;
-   
+
 }
 .modal-table-col3 {
     width: 30%;
-  
+
 }
 .modal-table-col4 {
     width: 20%;
-   
+
 }
 /* close up the space on the <ol> collapse panels*/
 #accordion li.panel {
@@ -804,4 +804,3 @@ body {
     width: auto;
     height: auto;
 }
-
