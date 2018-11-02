@@ -28,20 +28,19 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:active {
 }
 
 .tooltip > .tooltip-inner {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 	font-weight: normal;
 	font-size: 120%;
 	font-style: normal;
-    text-align: center;
+  text-align: left;
 	padding: 5px;
-    border-radius:5px;
+  border-radius:5px;
 	border: 1px solid gray;
 	line-height: 120%;
 	min-width: 300px;
 	max-width: 350px;
-	font-family: 'FontAwesome';
-  }
+}
 
 .tooltip.top .tooltip-arrow {
     bottom: 0;
@@ -75,11 +74,7 @@ Modal
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    padding: 50px; /* Location of the box */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
@@ -89,8 +84,6 @@ Modal
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -98,11 +91,9 @@ Modal
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 650px;
     text-align: center;
     color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+    padding: 10px 0;    
 }
 
 /* Add Animation - Zoom in the Modal */
@@ -170,36 +161,14 @@ i {
 /*--------------------------------
 Images & Videos
 --------------------------------*/
-img {
-	margin: 0;
-	max-width: 100%;
-	border: 1px solid;
-	box-shadow: 3px 3px 3px 0px #444444;
-}
-
 iframe {
 	border: 1px solid;
 	box-shadow: 3px 3px 3px 0px #444444;
 }
 
-.img-left {
-	float: left;
-	width: 30%;
-	margin-right: 2em;
-}
-
-.img-right {
-	float: right;
-	width: 30%;
-	margin-left: 2em;
-	margin-right: 5px;
-}
-
-.overflow-hidden {
-	overflow: hidden;
-	padding-bottom: 5px;
-}
-
-.clear {
-	clear: both;
+img {
+	margin: 0;
+	max-width: 100%;
+	border: 1px solid;
+	box-shadow: 3px 3px 3px 0px #444444;
 }
