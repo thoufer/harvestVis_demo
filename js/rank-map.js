@@ -124,7 +124,7 @@ function clicked(d, us){
   if(d.id.slice(0,2) == '15'){
     tooltipText = "Migatory birds are not hunted in Hawaii.";
   } else if (d.id.slice(0,2) == '02'){
-    tooltipText = "Survey data are not collected at the county level in Alaska.";
+    tooltipText = "Survey data are not collected at the borough level in Alaska.";
   } else if (textmap["nation-rank"] == 0) {
     tooltipText = "No harvest reported to survey for " + textmap['name'] +', ' + textmap['abbreviation'];
   }else {
