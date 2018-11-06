@@ -34,12 +34,10 @@ a#tooltip:link, a#tooltip:visited, a#tooltip:active {
 	font-size: 120%;
 	font-style: normal;
   text-align: left;
-	padding: 5px;
+	padding: 10px;
   border-radius:5px;
 	border: 1px solid gray;
 	line-height: 120%;
-	min-width: 300px;
-	max-width: 350px;
 }
 
 .tooltip.top .tooltip-arrow {
@@ -93,7 +91,7 @@ Modal
     width: 80%;
     text-align: center;
     color: #ccc;
-    padding: 10px 0;    
+    padding: 10px 0;
 }
 
 /* Add Animation - Zoom in the Modal */
