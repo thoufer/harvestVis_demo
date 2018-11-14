@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Harvest Survey Maps</title>
+    <title>Survey Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-	  <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
    	<script src="https://d3js.org/topojson.v2.min.js"></script>
@@ -14,14 +13,13 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/table.css" />
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/activity-map.css" />
-	  <link rel="stylesheet" href="css/tooltip.css" />
+    <link rel="stylesheet" href="css/activity-map.css" />
+    <link rel="stylesheet" href="css/tooltip.css" />
 
-	  <script src="js/HarvData.json"></script>
+    <script src="js/HarvData.json"></script>
 	  <script src="js/StateKey.json"></script>
-</head>
-<body class="content" id="body">
+    </head>
+<body>
     <!--  Top Menu-->
     <div class="hide-on-mobile">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 u-s-fish-wildlife-header header-top-color logoTop">
@@ -33,10 +31,8 @@
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-x">
                         <ul class="nav navbar-nav">
-                            <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="surveyDashboard.html">HOME</a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="harvest-vis.html">MAPS &amp; DATA</a></li>
-							<li><a href="wing-id.html">WING ID<span class="sr-only">(current)</span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -84,10 +80,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="surveyDashboard.html">HOME</a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="harvest-vis.html">MAPS &amp; DATA</a></li>
-							<li><a href="wing-id.html">WING ID<span class="sr-only">(current)</span></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -114,25 +108,20 @@
     </div>
     <!--END TOP MENU-->
     <!-- START CONTENT -->
-    <div class="container pad-top-40">
-
+    <div class="container  pad-top-40">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom-10">
-
-					<div class="col-xs-12">
             <h3><strong>What do we learn from harvest surveys?</strong></h3><br>
 
             Hunters provide information that helps set annual hunting regulations, ensuring both the best possible opportunities for hunting and healthy waterfowl populations. The <strong>Harvest Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#!" id="tooltip" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No! </span><i class="fa fa-info-circle"></i></a>. The Harvest Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
-          </div>
 
-          <!--visualization #1-->
-          <div class="col-xs-12">
+          <div>
             <h3>State waterfowl hunting by the numbers (10-year average)</h3>
             <span id="subhead-text" class="pad-bottom-20">Select a state on the map</span>
             <div class="row">
               <div class="col-xs-12 col-md-9">
-        				<div id="map-container">
-        						<svg id="activity-map" viewBox="0 0 850 550" preserveAspectRatio="xMinYMin meet"></svg>
-        				</div>
+                <div id="map-container">
+                    <svg id="activity-map" viewBox="0 0 850 550" preserveAspectRatio="xMinYMin meet"></svg>
+                </div>
               </div>
 
               <div class="col-xs-5 col-xs-offset-2 col-md-3 col-md-offset-0">
@@ -141,50 +130,46 @@
             </div>
           </div>
 
-          <div class="col-xs-12">
     				<p>We use the Harvest Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Harvest Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#!" id="tooltip" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state&mdash;some states require a separate permit, others offer free HIP registration over the internet, etc.&mdash;so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!"><span class="toolText">how do we know the number of waterfowl hunters in a state? </span><i class="fa fa-info-circle"></i></a>).</p>
 
     				<p>Harvest Survey participants tell us the days they hunted and how many birds they harvested each day. This information allows state wildlife agencies to choose the hunting dates that will provide the best hunting, because a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.</p>
-          </div>
-    			<!--end vis #1-->
 
-          <!--visualization #2-->
-  			  <div class="col-xs-12">
-    				      <h3>Weekly harvest by region (10-year average)</h3>
-    				      <span id="subhead-text" class="pad-bottom-20">Select a region on the map</span>
-          </div>
-
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
-  				      <div id="barchart-container">
-  					           <svg id="barchart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  				                 viewBox="0 0 750 550" preserveAspectRatio="xMaxYMax meet"></svg>
-                </div>
+            <!--visualization #2-->
+            <div>
+              <h3>Weekly harvest by region (10-year average)</h3>
+              <span id="subhead-text" class="pad-bottom-20">Select a region on the map</span>
             </div>
-          </div>
-          <!--end vis #2-->
 
-			  <!--visualization #3-->
-        <div class="col-xs-12">
-  				<p>Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the Harvest Survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                  <div id="barchart-container">
+                         <svg id="barchart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 750 550" preserveAspectRatio="xMaxYMax meet"></svg>
+                  </div>
+              </div>
+            </div>
+            <!--end vis #2-->
 
-  				<p>The Harvest Survey covers 3,115 counties/census units in the Contiguous U.S. Over the past 10 years, the survey has recorded duck harvest in 86% of these units, and goose harvest in 69%. Units with no harvest reported may see harvest at rates too low to be recorded by the survey.</p>
+          	<p>Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the Harvest Survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.</p>
 
-  				<h3>Waterfowl harvest by county</h3>
-  				<span id="subhead-text" class="pad-bottom-20">Click on a county for more information, double click or mouse scroll to zoom</span>
+    				<p>The Harvest Survey covers 3,115 counties/census units in the Contiguous U.S. Over the past 10 years, the survey has recorded duck harvest in 86% of these units, and goose harvest in 69%. Units with no harvest reported may see harvest at rates too low to be recorded by the survey.</p>
 
-        	<div id="selector">
-  					<ul class="option">
-  						<li id="rank-duck" onclick="changeRank('duck')">Duck Rankings</li>
-  						<li id="rank-goose" onclick="changeRank('geese')">Goose Rankings</li>
-  					</ul>
-  				</div>
+    				<h3>Waterfowl harvest by county</h3>
+    				<span id="subhead-text" class="pad-bottom-20">Click on a county for more information, double click or mouse scroll to zoom</span>
 
-          <div id="hmap-container" class="col-xs-11 pad-top-20 pad-bottom-20">
+            <!--visualization #3-->
+          	<div id="selector">
+    					<ul class="option">
+    						<li id="rank-duck" onclick="changeRank('duck')">Duck Rankings</li>
+    						<li id="rank-goose" onclick="changeRank('geese')">Goose Rankings</li>
+    					</ul>
+    				</div>
+
+            <div id="hmap-container" class="col-xs-11 pad-top-20 pad-bottom-20">
   						<div id="rank-map-container">
   							<svg id="harvest-map" xmlns="http://www.w3.org/2000/svg"
   							viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet"></svg>
-  						</div>
+  				    </div>
 
               <div class="col-xs-12 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-5 col-lg-3 col-lg-offset-4 clearfix">
                 <div class="row">
@@ -192,40 +177,39 @@
                     <span>Low harvest</span>
                     <span class="pull-right">High harvest</span>
                   </div>
-    			        <div class="pad-top-10">
-    							  <ul class="legend">
+      			      <div class="pad-top-10">
+      						  <ul class="legend">
                       <li><span class="one"></span></li>
                       <li><span class="two"></span></li>
                       <li><span class="three"></span></li>
                       <li><span class="four"></span></li>
-      								<li><span class="five"></span></li>
-      							</ul>
-      						</div>
+        							<li><span class="five"></span></li>
+        						</ul>
+        					</div>
                 </div>
               </div>
-  				</div>
+    				</div>
+    			<!-- end vis 3 div -->
+
+    			<div class="col-xs-12 pad-top-20">
+            <div class="row">
+      				<p>Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.</p>
+
+      				<img class="img-rounded pull-right" src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings"/></p>
+
+      				<p>Did you know ducks can be identified using just a wing?
+      				<a href="#!" id="tooltip" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because hunter bag limits vary by species and sex."><span class="toolText">Yes, it's true!</span> <i class="fa fa-info-circle"></i></a>
+      				<a href="wing-id.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
+            </div>
+
+            <hr>
+      			<p style="margin-top: 10px; font-size: 8pt;">This content was developed through a collaboration between staff from the USFWS Migratory Bird Program and USGS Patuxent Wildlife Research Center. The project was kicked off at an internal 2017 National Civic Day of Hacking event held at PWRC. Participants included Tony Bethea, Theo Burton, Tony Celis-Murillo, Chris Deets, Rob Fowler, Pam Garrettson, Kayt Jonsson, Jenn Malpass, Derek Masaki, Paul Padding, Bob Raftovich, Becky Rau, Emily Silverman, Alli Sussman, Khristi Wilkins, and Nathan Zimpfer.</p>
+    			</div>
         </div>
-			<!-- end vis 3 div -->
-
-			<div class="col-xs-12 pad-top-20">
-        <div class="row">
-  				<p>Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.</p>
-
-  				<img class="img-rounded pull-right" src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings"/></p>
-
-  				<p>Did you know ducks can be identified using just a wing?
-  				<a href="#!" id="tooltip" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because hunter bag limits vary by species and sex."><span class="toolText">Yes, it's true!</span> <i class="fa fa-info-circle"></i></a>
-  				<a href="wing-id.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
-        </div>
-
-        <hr>
-        <!--footer information, moved inside of main content area div so it aligns with the rest of the page-->
-  			<p style="margin-top: 10px; font-size: 8pt;">This content was developed through a collaboration between staff from the USFWS Migratory Bird Program and USGS Patuxent Wildlife Research Center. The project was kicked off at an internal 2017 National Civic Day of Hacking event held at PWRC. Participants included Tony Bethea, Theo Burton, Tony Celis-Murillo, Chris Deets, Rob Fowler, Pam Garrettson, Kayt Jonsson, Jenn Malpass, Derek Masaki, Paul Padding, Bob Raftovich, Becky Rau, Emily Silverman, Alli Sussman, Khristi Wilkins, and Nathan Zimpfer.</p>
-			</div>
-
+      </div>
     <!-- End CONTENT -->
     <!-- footer -->
-    <footer class="footer">
+    <footer>
         <div class="col-12-lg  pad-top-10 pad-bottom-10 text-center">
             <div class="dk-green-txt">
                 <a href="#" data-toggle="modal" data-target="#privacyModal">Required Notices</a>
@@ -262,9 +246,6 @@
             </div>
         </div>
     </div>
-
-    </div>
-  </div>
 </body>
 <script src="js/jquery.ui.widget.js"></script>
 <script src="js/activity-map.js" type="text/javascript"></script>
