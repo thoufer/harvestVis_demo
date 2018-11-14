@@ -5,17 +5,15 @@
     <title>Duck Wing Identification</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!--template links-->
-	  <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/table.css" />
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/tooltip.css" />
-</head>
-<body class="content" id="body">
+    <link rel="stylesheet" href="css/tooltip.css" />
+    </head>
+<body>
     <!--  Top Menu-->
     <div class="hide-on-mobile">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 u-s-fish-wildlife-header header-top-color logoTop">
@@ -27,10 +25,8 @@
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-x">
                         <ul class="nav navbar-nav">
-                            <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="surveyDashboard.html">HOME</a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li><a href="harvest-vis.html">MAPS &amp; DATA<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="wing-id.html">WING ID</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -78,10 +74,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="surveyDashboard.html">HOME<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="surveyDashboard.html">HOME</a></li>
                             <li><a href="#">ABOUT<span class="sr-only">(current)</span></a></li>
-							<li><a href="harvest-vis.html">MAPS &amp; DATA<span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="wing-id.html">WING ID</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HELP<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -108,8 +102,8 @@
     </div>
     <!--END TOP MENU-->
     <!-- START CONTENT -->
-    <div class="container pad-top-40">
-   			  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom-10">
+    <div class="container  pad-top-40">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom-10">
             <h3><strong>How do we identify species from their wings?</strong></h3><br>
 
             <div class="row">
@@ -124,97 +118,113 @@
                     <img class="img-responsive myImg img-rounded" src="img/FeatherGroups.jpg" alt="duck wing feather groupings" title="duck wing feather groupings" />
               </div>
             </div>
-    		  </div>
+    		</div>
 
-          <!-- Mallard Identification video -->
-          <div class="col-xs-12 pad-top-40">
-              <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
-    				      <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
+        <!-- Mallard Identification video -->
+        <div class="col-xs-12 pad-top-40">
+            <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
+  				      <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
+        </div>
 
-          <div class="row">
-    			    <div class="col-xs-12 pad-top-40">
-                <div class="col-xs-4 col-lg-3">
+        <div class="row">
+    		    <div class="col-xs-12 pad-top-40">
+              <div class="col-xs-4 col-lg-3">
     				      <img class="img-responsive img-rounded" src="img/envelope.fw.png" title="Parts Collection Envelope" alt="Image of parts collection envelope" />
-                </div>
-                <div class="col-xs-8 ">
+              </div>
+              <div class="col-xs-8">
                   <p class="col-xs-4 pull-right">
                   <img class="img-responsive myImg img-rounded pull-right" src="img/wingbee.fw.png" alt="envelopes"
                    title="envelopes" />
                  </p>
           				<p>The <strong>Waterfowl Parts Collection Survey</strong> randomly selects 5,000-6,000 waterfowl hunters to send us a wing from every duck, and tail feathers from every goose, they shoot during the hunting season. This survey tells us the species composition of each state's duck and goose harvests. The image to the left shows the postage-paid envelope the selected waterfowl hunters send us for every individual bird they shoot during the hunting season. Once we receive the envelopes, biologists and volunteers gather together and sort through the wings and feathers to identify the species. The image above and to the right shows a stack of received envelopes and a duck wing ready for identification.</p>
-                </div>
-              </div>
-    			</div>
-
-          <div class="col-xs-12 pad-top-20">
-      			<div class="row">
-              <div class="col-xs-12">
-      				    <p><a href="#!" id="tooltip" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Harvest Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000)."><span class="toolText">We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.</span> <i class="fa fa-info-circle"></i></a> We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with <strong>Parts Collection Surveys</strong>.</p>
-              </div>
-
-              <div class="col-xs-8 col-md-7">
-                <p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar.</p>
-
-                <p>What is the duck on the right? Click the binoculars to find out the answer! <a href="#!" id="tooltip" data-toggle="tooltip" title="A female blue-winged teal!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a></p>
-              </div>
-
-              <div class="col-xs-4">
-                <img class="myImg img-rounded" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" />
               </div>
             </div>
-          </div>
+    		</div>
 
-          <div class="col-xs-12 pad-top-10">
-            <div class="col-xs-4 pull-left">
+        <div class="col-xs-12 pad-top-20">
+    			<div class="row">
+            <div class="col-xs-12">
+    				    <p><a href="#!" id="tooltip" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Harvest Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000)."><span class="toolText">We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.</span> <i class="fa fa-info-circle"></i></a> We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with <strong>Parts Collection Surveys</strong>.</p>
+            </div>
+
+            <div class="col-xs-8 col-md-7">
+              <p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar.</p>
+
+              <p>What is the duck on the right? Click the binoculars to find out the answer! <a href="#!" id="tooltip" data-toggle="tooltip" title="A female blue-winged teal!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a></p>
+            </div>
+
+            <div class="col-xs-4">
+              <img class="myImg img-rounded" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 pad-top-10">
+          <div class="row">
+            <div class="col-xs-4">
     				     <img class="myImg img-rounded" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" />
             </div>
 
             <div class="col-xs-8">
       				What about the one on the left? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female gadwall!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> Do you have to worry about the next bird you shoot if you have already bagged one of these? The next video in the series shows you how to identify several "brown ducks" of different species by their wings. Remember to use the the wing feather groupings image above to help with species identification.
             </div>
-    			</div>
+          </div>
+  			</div>
 
-          <!-- Dabbling duck ID video -->
-    			<div class="col-xs-12 pad-top-40">
-            <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
-    				      <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/TPC72Oguurs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- Dabbling duck ID video -->
+        <div class="col-xs-12 pad-top-40">
+          <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
+                <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/TPC72Oguurs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+
+    		<div class="row">
+          <div class="col-xs-12 pad-top-40">
+            <div class="col-xs-4 pull-left">
+              <img class="myImg" src="img/femredh.jpg" alt="female redhead" title="female redhead" />
             </div>
-    			</div>
 
-      		<div class="col-xs-12 pad-top-40">
-    				<p class="col-xs-4 pull-left"><img class="myImg" src="img/femredh.jpg" alt="female redhead" title="female redhead" /></p>
-
-    				<p class="col-xs-8">The duck to the left is another female; do you know what species? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female redhead!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> To differentiate between similarly colored redheads and canvasbacks, we use not only the wing, but also the shape of the head and bill.</p>
-
-            <p class="col-xs-4 pull-right"><img class="myImg" src="img/femgrsc.jpg" alt="female greater scaup" title="female greater scaup" /></p>
-
-            <p class="col-xs-8 pull-left clearfix">The bird on the right is a female scaup, but can you tell which of the two species (greater or lesser) is pictured? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female greater scaup!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> Scaup species can be difficult to identify, particularly with nothing to compare against. But by looking at the color of the primary wing feathers, we can determine the correct scaup species.</p>
-
-            <p class="col-xs-12">Here is another video demonstrating how to distinguish between several diving duck species (including scaup, ring-necked duck, redhead, and canvasback) using wings and wing feathers. Don't forget to use the wing feather groupings image at the top of this page for reference.</p>
-    		  </div>
-
-          <!-- diving duck video -->
-	        <div class="col-xs-12 pad-top-20">
-            <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
-    				      <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/aWE_bHEoXGc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="col-xs-8">
+              The duck to the left is another female; do you know what species? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female redhead!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> To differentiate between similarly colored redheads and canvasbacks, we use not only the wing, but also the shape of the head and bill.
             </div>
           </div>
+        </div>
 
+      	<div class="row">
           <div class="col-xs-12 pad-top-20">
-            <div class="row">
-            <p><a href="harvest-vis.html" style="font-weight: bold;">Click here to see maps showing waterfowl harvest in through the U.S.</a></p>
-            <hr>
-            <!-- Credit Information -->
-    				<p style="margin-top: 0.5%; font-size: 8pt;">This content was developed through a collaboration between staff from the USFWS Migratory Bird Program and USGS Patuxent Wildlife Research Center. The project was kicked off at an internal 2017 National Civic Day of Hacking event held at PWRC. Participants included Tony Bethea, Theo Burton, Tony Celis-Murillo, Chris Deets, Rob Fowler, Pam Garrettson, Kayt Jonsson, Jenn Malpass, Derek Masaki, Paul Padding, Bob Raftovich, Becky Rau, Emily Silverman, Alli Sussman, Khristi Wilkins, and Nathan Zimpfer.</p>
+            <div class="col-xs-8">
+              The bird on the right is a female scaup, but can you tell which of the two species (greater or lesser) is pictured? <a href="#!" id="tooltip" data-toggle="tooltip" title="A female greater scaup!"><span class="toolText"></span><i class="fa fa-binoculars"></i></a> Scaup species can be difficult to identify, particularly with nothing to compare against. But by looking at the color of the primary wing feathers, we can determine the correct scaup species.
+            </div>
+
+            <div class="col-xs-4">
+              <img class="myImg" src="img/femgrsc.jpg" alt="female greater scaup" title="female greater scaup" />
+            </div>
+
+            <div class="col-xs-12 pad-top-20">
+              Here is another video demonstrating how to distinguish between several diving duck species (including scaup, ring-necked duck, redhead, and canvasback) using wings and wing feathers. Don't forget to use the wing feather groupings image at the top of this page for reference.
+            </div>
           </div>
+        </div>
+
+        <!-- diving duck video -->
+        <div class="col-xs-12 pad-top-40">
+          <div class="col-xs-10 col-md-6 col-xs-offest-1 col-md-offset-3">
+                <iframe class="img-rounded" width="560" height="315" src="https://www.youtube.com/embed/aWE_bHEoXGc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Credit Information -->
+          <div class="col-xs-12 pad-top-40">
+            <p style="font-size: 8pt;">This content was developed through a collaboration between staff from the USFWS Migratory Bird Program and USGS Patuxent Wildlife Research Center. The project was kicked off at an internal 2017 National Civic Day of Hacking event held at PWRC. Participants included Tony Bethea, Theo Burton, Tony Celis-Murillo, Chris Deets, Rob Fowler, Pam Garrettson, Kayt Jonsson, Jenn Malpass, Derek Masaki, Paul Padding, Bob Raftovich, Becky Rau, Emily Silverman, Alli Sussman, Khristi Wilkins, and Nathan Zimpfer.</p>
           </div>
 
+        </div>
+      </div>
     <!-- End CONTENT -->
     <!-- footer -->
-    <footer class="footer">
-        <div class="col-12-lg pad-top-10 pad-bottom-10 text-center">
+    <footer>
+        <div class="col-12-lg  pad-top-10 pad-bottom-10 text-center">
             <div class="dk-green-txt">
                 <a href="#" data-toggle="modal" data-target="#privacyModal">Required Notices</a>
                 <br />
@@ -250,17 +260,13 @@
             </div>
         </div>
     </div>
-  	<!-- Image Modal -->
-		<div id="myModal" class="modal">
+    <!-- image modal -->
+    <div id="myModal" class="modal">
 				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 				<img class="modal-content" id="img01">
 				<div id="caption"></div>
-
-
     </div>
-
-  </div>
 </body>
 <script src="js/jquery.ui.widget.js"></script>
-<script src="js/tooltip.js" type="text/javascript"></script>
+<script src="js/tooltip.js"></script>
 </html>
