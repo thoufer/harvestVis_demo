@@ -70,14 +70,14 @@ div#tx-indent {
   fill: #4b79b4; /* lightsteelblue family */
 }
 
+.axis {
+  font-size: 14px;
+}
 .axis path,
 .axis line {
   stroke: #000;
 }
 
-/*svg text {
-  font-size: 12px;
-}*/
 
 .btn .btn-primary {
   margin-right: 20px;

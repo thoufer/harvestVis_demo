@@ -1,84 +1,141 @@
-var months = [{month:'September', week:35},
-              {month:'October',   week:40},
-              {month:'November',  week:45},
-              {month:'December',  week:50},
-              {month:'January',   week:55}];
+var BarChart = (function(window, d3) {
+  var months, mgmt_unit, margin = {}, width, height, xScale, bar, chartwrapper,
+      yScale, xAxis, yAxis, bsvg, mgmt_map, mgmt_unit, projection, path;
 
-var margin = {top: 40, right: 50, bottom: 40, left: 50};
-var width = parseInt(d3.select("#barchart-container").style("width"),10); //750,
-var height = parseInt(d3.select("#barchart-container").style("height"),10); //550
-var innerWidth = width - margin.left - margin.right;
-var innerHeight = height - margin.top - margin.bottom;
-var xScale = d3.scaleBand()
-                .rangeRound([0, innerWidth])
-                .padding(0.2),
-    yScale = d3.scaleLinear()
-                .rangeRound([innerHeight, 0]),
+  d3.queue()
+    .defer(d3.json, "js/us-states.json")
+    .defer(d3.csv, "js/HarvData.csv")
+    .await(init);
+
+  function init(error, us, csv) {
+    data = d3.nest()
+              .key(function(d){ return d.region; })
+              .entries(csv);
+
+    months = [{month:'September', week:'35'},
+              {month:'October',   week:'40'},
+              {month:'November',  week:'45'},
+              {month:'December',  week:'50'},
+              {month:'January',   week:'55'}];
+
+    mgmt_unit = [
+      {
+        "classname": "PF-North",
+        "states": [53,41,30,16,2],
+        "idx": 6
+      },
+      {
+        "classname": "PF-South",
+        "states": [6,32,49,4],
+        "idx": 7
+      },
+      {
+        "classname": "CF-North",
+        "states": [38,31,46,56],
+        "idx": 2
+      },
+      {
+        "classname": "CF-South",
+        "states": [8,20,35,40,48],
+        "idx": 3
+      },
+      {
+        "classname": "MF-North",
+        "states": [26,27,17,18,19,39,55],
+        "idx": 4
+      },
+      {
+        "classname": "MF-South",
+        "states": [29,21,47,1,5,22,28],
+        "idx": 5
+      },
+      {
+        "classname": "AF-North",
+        "states": [51,54,44,42,36,34,33,25,24,23,11,10,9,50],
+        "idx": 0
+      },
+      {
+        "classname": "AF-South",
+        "states": [12,13,37,45],
+        "idx": 1
+      },
+    ];
+
+    xScale = d3.scaleBand().domain(data[0].values.map(function(d){ return d.week; }));
+    yScale = d3.scaleLinear().domain([0,0.15]);
+
+    // set projection and path for nav map
+    projection = d3.geoAlbersUsa().scale(400).translate([550,100]);
+    path = d3.geoPath().projection(projection);
+
+    // initialize the bsvg
+    bsvg = d3.select("#barchart");
+
+    // initialize the management Map
+    mgmt_map = bsvg.append("g").attr("class", "mgmt_units");
+
+    mgmt_unit.forEach(function(unit){
+      mgmt_map.append("path")
+        .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
+        .attr("class", "mgmt_unit")
+        .attr("id", unit.idx)
+        .attr("d", path)
+    });
+
+    mgmt_map.append("path")
+      .attr("class", "state-borders white")
+      .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
+
+    mgmt_unit.forEach(function(unit){
+      mgmt_map.append("path")
+        .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
+        .attr("class", "mgmt_unit boundary")
+        .attr("d", path);
+    });
+
+    // initialize the axes.
     xAxis = d3.axisBottom(xScale)
-              .tickSize(0.1),
+              .tickSize(0.1);
     yAxis = d3.axisLeft(yScale)
               .ticks(15, "%");
 
-var bsvg = d3.select("#barchart")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("class", "graph")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    chartwrapper = bsvg.append('g');
+    chartwrapper.append("g").classed("axis axis-x", true);
+    chartwrapper.append("g").classed("axis axis-y", true);
 
+    // render the chart
+    render();
+  }
 
-d3.json("js/us-states.json", function (error, us){
+  function render() {
 
-  var projection = d3.geoAlbersUsa().scale(400).translate([550,50]);
-  var path = d3.geoPath().projection(projection);
+    // update the dimensions based on width of container
+    updateDimensions($("#barchart-container").width());
 
+    d3.selectAll('.mgmt_unit')
+      .on("click", function(d) {
+          // Find previously selected, unselect
+          d3.select(".selected-unit").classed("selected-unit", false);
+          // Select current item
+          d3.select(this).classed("selected-unit", true);
+          // call chart update
+          updateChart(this.id);
+        });
 
-  var mgmt_map = bsvg.append("g")
-    .attr("class", "mgmt_units");
+    //update x and y scales to new dimensions
+    xScale.rangeRound([0, width]).padding(0.2);
+    yScale.rangeRound([height, 0]);
 
-  mgmt_unit.forEach(function(unit){
-    mgmt_map.append("path")
-      .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", "mgmt_unit")
-      .attr("d", path)
-      .on("click", function(d){
-        // Find previously selected, unselect
-        d3.select(".selected-unit").classed("selected-unit", false);
-        // Select current item
-        d3.select(this).classed("selected-unit", true);
-        update(unit.idx); });
-  });
-
-  mgmt_map.append("path")
-    .attr("class", "state-borders white")
-    .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
-
-  mgmt_unit.forEach(function(unit){
-    mgmt_map.append("path")
-      .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", "mgmt_unit boundary")
-      .attr("d", path);
-  });
-
-    var data = HarvestByRegion[0];
-
-    xScale.domain(data.values.map(function(d) { return d.week; }));
-    yScale.domain([0, 0.15]);
-
-    var bargraph = bsvg.append('g');
-
-    bargraph.append("g")
-      .attr("class", "axis axis-x")
-      .attr("transform", "translate(0," + innerHeight + ")")
+    bsvg.select('.axis.axis-x')
+      .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
         .selectAll("text")
         .remove();
 
-    bargraph.append("g")
-        .attr("class", "axis axis-y")
+    bsvg.select('.axis.axis-y')
         .call(yAxis);
 
-    bargraph.append("g")
+    chartwrapper.append("g")
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 10)
@@ -86,108 +143,69 @@ d3.json("js/us-states.json", function (error, us){
         .attr("text-anchor", "end")
         .text("Total Harvest");
 
-    bargraph.append("g")
+    chartwrapper.append("g")
       .selectAll("text")
         .data(months).enter()
         .append("text")
-          .attr("x", function(d){ return xScale(d.week) + 10; })
-          .attr("y", innerHeight + 30)
+          .attr("x", function(d){ return xScale(d.week); })
+          .attr("y", height + 30)
           .style("text-anchor", "left")
           .text(function(d){ return d.month; });
 
-    var bars = bargraph.selectAll(".bar")
-      .data(data.values);
-
-      bars.enter()
-        .append("rect")
+    bars = chartwrapper.selectAll('.bar')
+       .data(data[0].values).enter()
+       .append("rect")
           .attr("class", "bar")
           .attr("x", function(d){ return xScale(d.week); })
-          .attr("y", function(d) { return yScale(0); })
-        	.attr("height", function(d){ return  innerHeight - yScale(0); })
+          .attr("y", function(d) { return yScale(d.h); })
+        	.attr("height", function(d){ return  height - yScale(d.h); })
         	.attr("width", xScale.bandwidth());
-});
 
-function init(){
+    // select AF-North as default. using jquery as d3 does not like
+    // numeric ids
+    $('path#0').addClass('selected-unit');
 
-    var data = HarvestByRegion[0];
+    //update svg elements to new dimensions
+    bsvg
+      .attr('width', width + margin.right + margin.left)
+      .attr('height', height + margin.top + margin.bottom);
+    mgmt_map.attr('transform', 'translate(50, 0)');
+    chartwrapper.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-    xScale.domain(data.values.map(function(d) { return d.week; }));
-    //yScale.domain([0, d3.max(data.values, function(d) { return d.h; })]);
-    yScale.domain([0, 0.15]);
+  }
 
-    var bargraph = bsvg.append('g');
+  function updateDimensions(winWidth){
+    margin.top = 60;
+    margin.bottom = 40;
+    margin.right = 50;
+    margin.left = 50;
 
-    bargraph.append("g")
-      .attr("class", "axis axis-x")
-      .attr("transform", "translate(0," + innerHeight + ")")
-      .call(xAxis)
-        .selectAll("text")
-        .remove();
+    width =  winWidth - margin.left - margin.right;
+    height = 550 - margin.top - margin.bottom;
+  }
 
-    bargraph.append("g")
-        .attr("class", "axis axis-y")
-        .call(yAxis);
-
-    bargraph.append("g")
-      .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 10)
-        .attr("dy", "0.71em")
-        .attr("text-anchor", "end")
-        .text("Total Harvest");
-
-    bargraph.append("g")
-      .selectAll("text")
-        .data(months).enter()
-        .append("text")
-          .attr("x", function(d){ return xScale(d.week) + 10; })
-          .attr("y", innerHeight + 30)
-          .style("text-anchor", "left")
-          .text(function(d){ return d.month; });
-
-    var bars = bargraph.selectAll(".bar")
-      .data(data.values);
-
-      bars.enter()
-        .append("rect")
-          .attr("class", "bar")
-          .attr("x", function(d){ return xScale(d.week); })
-          .attr("y", function(d) { return yScale(0); })
-        	.attr("height", function(d){ return  innerHeight - yScale(0); })
-        	.attr("width", xScale.bandwidth());
-}
-
-function update(regionIdx){
-  var data = HarvestByRegion[regionIdx];
-
-  xScale.domain(data.values.map(function(d) { return d.week; }));
-  //yScale.domain([0, d3.max(data.values, function(d) { return d.h; })]);
-
-  var bars = bsvg.selectAll(".bar")
-    .data(data.values);
+  function updateChart(regionIdx){
+    bars = bsvg.selectAll(".bar")
+               .data(data[regionIdx].values);
 
     bars.enter()
       .append("rect")
         .attr("class", "bar")
         .attr("x", function(d){ return xScale(d.week); })
         .attr("y", function(d) { return yScale(d.h); })
-      	.attr("height", function(d){ return  innerHeight - yScale(d.h); })
+      	.attr("height", function(d){ return  height - yScale(d.h); })
       	.attr("width", xScale.bandwidth());
 
     bars.exit().remove();
 
     bars.transition()
       .attr("y", function(d) { return yScale(d.h); })
-      .attr("height", function(d){ return  innerHeight - yScale(d.h); })
+      .attr("height", function(d){ return  height - yScale(d.h); })
       .duration(850);
+  }
 
-};
+  return {
+    render : render
+  }
 
-
-function resizeBarchart() {
-  bsvg.attr("width", width).attr("height", height)
-  bsvg.size([width, height]);
-};
-
-window.addEventListener("resize", resizeBarchart);
-//init();
+})($("#barchart-container").width(),d3);
