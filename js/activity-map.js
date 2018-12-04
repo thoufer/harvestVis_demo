@@ -10,7 +10,8 @@ function drawMap() {
 
   // Add text labels
   var textLabels = svg.append("g")
-    .attr("class", "textLabels");
+    .attr("class", "textLabels")
+    .attr("transform", "translate(40, 0)");
 
   textLabels.append("text")
     .attr("x", 100)
@@ -138,7 +139,6 @@ function drawMap() {
 }
 
 function resize_activity() {
-  d3.select("g.textLabels").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
   d3.select("g.states").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
   d3.select("g.flyway").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
   $("#activity-map").height($("#map-container").width()*0.572);
