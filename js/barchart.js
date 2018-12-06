@@ -1,6 +1,7 @@
 var BarChart = (function(window, d3) {
-  var months, mgmt_unit, margin = {}, width, height, xScale, bar, chartwrapper,
-      yScale, xAxis, yAxis, bsvg, mgmt_map, mgmt_unit, projection, path;
+  var margin = {}, width, height, months, bars, chartwrapper,
+      xScale, yScale, xAxis, yAxis, bsvg, mgmt_unit, mgmt_map,
+      projection, path;
 
   d3.queue()
     .defer(d3.json, "js/us-states.json")
@@ -181,7 +182,8 @@ var BarChart = (function(window, d3) {
     margin.left = 50;
 
     width =  winWidth - margin.left - margin.right;
-    height = 550 - margin.top - margin.bottom;
+    height = 0.7 * width;
+
   }
 
   function updateChart(regionIdx){
@@ -209,3 +211,6 @@ var BarChart = (function(window, d3) {
   }
 
 })($("#barchart-container").width(),d3);
+
+
+window.addEventListener('resize', BarChart.render);
