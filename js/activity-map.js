@@ -1,8 +1,7 @@
 function drawMap() {
   var svg = d3.select("#activity-map");
   var stateInfo = d3.map();
-  var projection = d3.geoAlbersUsa()
-    .scale([1050]);
+  var projection = d3.geoAlbersUsa().scale([1050]);
   var path = d3.geoPath().projection(projection);
   var selected = d3.select(null);
 
