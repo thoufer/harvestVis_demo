@@ -70,9 +70,25 @@ div#tx-indent {
   fill: #4b79b4; /* lightsteelblue family */
 }
 
-.axis {
-  font-size: 14px;
+@media (max-width: 350px) {
+  .axis {
+    font-size: 10px;
+  }
+  .labels-x {
+    font-size: 9px;
+  }
 }
+
+@media (min-width: 355px) {
+  .axis {
+    font-size: 14px;
+  }
+  .labels-x {
+    font-size: 14px;
+  }
+}
+
+
 .axis path,
 .axis line {
   stroke: #000;

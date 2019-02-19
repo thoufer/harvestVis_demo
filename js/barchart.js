@@ -1,4 +1,4 @@
-var BarChart = (function(window, d3) {
+var BarChart = (function(container, d3) {
   var margin = {}, width, height, months, bars, chartwrapper,
       xScale, yScale, xAxis, yAxis, bsvg, mgmt_unit, mgmt_map,
       projection, path;
@@ -9,15 +9,17 @@ var BarChart = (function(window, d3) {
     .await(init);
 
   function init(error, us, csv) {
+    updateDimensions(container);
+
     data = d3.nest()
               .key(function(d){ return d.region; })
               .entries(csv);
 
-    months = [{month:'September', week:'35'},
-              {month:'October',   week:'40'},
-              {month:'November',  week:'45'},
-              {month:'December',  week:'50'},
-              {month:'January',   week:'55'}];
+    months = [{month:'September', short_month:'Sept.', week:'35'},
+              {month:'October',   short_month:'Oct.', week:'40'},
+              {month:'November',  short_month:'Nov.', week:'45'},
+              {month:'December',  short_month:'Dec.', week:'50'},
+              {month:'January',   short_month:'Jan.', week:'55'}];
 
     mgmt_unit = [
       {
@@ -66,7 +68,8 @@ var BarChart = (function(window, d3) {
     yScale = d3.scaleLinear().domain([0,0.15]);
 
     // set projection and path for nav map
-    projection = d3.geoAlbersUsa().scale(400).translate([550,100]);
+    scaling = (width >= 700) ? 450 : 150;
+    projection = d3.geoAlbersUsa().scale(scaling).translate([width*0.80, height - (height*0.80)]);
     path = d3.geoPath().projection(projection);
 
     // initialize the bsvg
@@ -109,9 +112,8 @@ var BarChart = (function(window, d3) {
   }
 
   function render() {
-
     // update the dimensions based on width of container
-    updateDimensions($("#barchart-container").width());
+    updateDimensions(container);
 
     d3.selectAll('.mgmt_unit')
       .on("click", function(d) {
@@ -145,13 +147,14 @@ var BarChart = (function(window, d3) {
         .text("Total Harvest");
 
     chartwrapper.append("g")
+      .attr("class", "labels-x")
       .selectAll("text")
         .data(months).enter()
         .append("text")
           .attr("x", function(d){ return xScale(d.week); })
-          .attr("y", height + 30)
+          .attr("y", height + (height * 0.08))
           .style("text-anchor", "left")
-          .text(function(d){ return d.month; });
+          .text(function(d){ return formatMonthLabel(d, container.width); });
 
     bars = chartwrapper.selectAll('.bar')
        .data(data[0].values).enter()
