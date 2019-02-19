@@ -179,14 +179,13 @@ var BarChart = (function(container, d3) {
   }
 
   function updateDimensions(winWidth){
-    margin.top = 60;
-    margin.bottom = 40;
-    margin.right = 50;
-    margin.left = 50;
+    margin.top = parseInt(winWidth * 0.08) //60;
+    margin.bottom = parseInt(winWidth * 0.07) //40;
+    margin.right = parseInt(winWidth * 0.07) //50;
+    margin.left = parseInt(winWidth * 0.10) //50;
 
-    width =  winWidth - margin.left - margin.right;
-    height = 0.7 * width;
-
+    width =  parseInt(winWidth - margin.left - margin.right);
+    height = Math.ceil(0.7 * width);
   }
 
   function updateChart(regionIdx){
@@ -197,8 +196,8 @@ var BarChart = (function(container, d3) {
       .append("rect")
         .attr("class", "bar")
         .attr("x", function(d){ return xScale(d.week); })
-        .attr("y", function(d) { return yScale(d.h); })
-      	.attr("height", function(d){ return  height - yScale(d.h); })
+        .attr("y", function(d) {return yScale(d.h); })
+        .attr("height", function(d){ return  height - yScale(d.h); })
       	.attr("width", xScale.bandwidth());
 
     bars.exit().remove();
@@ -209,11 +208,14 @@ var BarChart = (function(container, d3) {
       .duration(850);
   }
 
+  function formatMonthLabel(d){
+      return (width >= 358) ? d.month : d.short_month;
+  }
+
   return {
     render : render
   }
 
 })($("#barchart-container").width(),d3);
-
 
 window.addEventListener('resize', BarChart.render);
