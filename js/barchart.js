@@ -68,8 +68,8 @@ var BarChart = (function(container, d3) {
     yScale = d3.scaleLinear().domain([0,0.15]);
 
     // set projection and path for nav map
-    scaling = (width >= 700) ? 450 : 150;
-    projection = d3.geoAlbersUsa().scale(scaling).translate([width*0.80, height - (height*0.80)]);
+    scaling = parseInt(width * 0.45)
+    projection = d3.geoAlbersUsa().scale(scaling).translate([width*0.85, height - (height*0.80)]);
     path = d3.geoPath().projection(projection);
 
     // initialize the bsvg
