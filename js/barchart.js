@@ -144,7 +144,8 @@ var BarChart = (function(container, d3) {
         .attr("y", 10)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
-        .text("Total Harvest");
+        .attr('class', 'axis')
+        .text("Total regional harvest");
 
     chartwrapper.append("g")
       .attr("class", "labels-x")
