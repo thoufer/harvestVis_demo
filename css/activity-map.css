@@ -70,16 +70,16 @@ div#tx-indent {
   fill: #4b79b4; /* lightsteelblue family */
 }
 
-@media (max-width: 350px) {
+@media (max-width: 575px) {
   .axis {
     font-size: 10px;
   }
   .labels-x {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 
-@media (min-width: 355px) {
+@media (min-width: 576px) {
   .axis {
     font-size: 14px;
   }
