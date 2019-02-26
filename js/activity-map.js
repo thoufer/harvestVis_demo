@@ -75,10 +75,12 @@ function drawMap() {
 
      resize_activity();
 
-     var states = svg.append("g");
+     var map = svg.append("g")
+                .attr("transform", "translate(-50, 50)");
+
+     var states = map.append("g");
      states
-         .attr("class", "states")
-         .attr("transform", "translate(-50, 50)")
+       .attr("class", "states")
        .selectAll("path")
        .data(topojson.feature(us, us.objects.states).features)
        .enter().append("path")
@@ -126,9 +128,8 @@ function drawMap() {
         .attr("class", "state-borders")
         .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 
-     svg.append("g")
+     map.append("g")
        .attr("class", "flyway")
-       .attr("transform", "translate(-50, 50)")
        .selectAll("path")
        .data(FlywayBoundaryLine.features)
        .enter().append("path")
@@ -140,9 +141,8 @@ function drawMap() {
 }
 
 function resize_activity() {
-  d3.select("g.states").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
-  d3.select("g.flyway").attr("transform", "scale(" + $("#map-container").width() / 500 + ")")
-  $("#activity-map").height($("#map-container").width()*0.572);
+  d3.select("g.map").attr("transform", "scale(" + $("#map-container").width() / 500 + ")");
+  $("#activity-map").height($("#map-container").width() * 0.618);
 };
 
 
