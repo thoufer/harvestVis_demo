@@ -73,6 +73,8 @@ function drawMap() {
   function ready(error, us, FlywayBoundaryLine) {
      if (error) throw error;
 
+     resize_activity();
+
      var states = svg.append("g");
      states
          .attr("class", "states")
